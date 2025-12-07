@@ -45,6 +45,8 @@
             color: var(--neutral-dark);
             background-color: #fff;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -58,22 +60,24 @@
             width: 100%;
             max-width: 1300px;
             margin: 0 auto;
-            padding: 0 25px;
+            padding: 0 20px;
         }
 
         section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
+            width: 100%;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
             position: relative;
+            width: 100%;
         }
 
         .section-header h2 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             color: var(--primary-dark);
             display: inline-block;
             position: relative;
@@ -89,29 +93,30 @@
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 80px;
             height: 5px;
             background: var(--gradient-accent);
             border-radius: 5px;
         }
 
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--neutral-gray);
             max-width: 700px;
-            margin: 25px auto 0;
+            margin: 20px auto 0;
             line-height: 1.6;
+            padding: 0 10px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 16px 36px;
+            padding: 14px 28px;
             border-radius: var(--border-radius);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
             transition: var(--transition);
             cursor: pointer;
             border: none;
@@ -120,6 +125,7 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            white-space: nowrap;
         }
 
         .btn::before {
@@ -186,7 +192,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 25px 0;
+            padding: 20px 0;
             transition: var(--transition);
             background-color: rgba(10, 35, 66, 0.98);
             backdrop-filter: blur(15px);
@@ -202,15 +208,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
+            padding: 0 15px;
         }
 
         .logo {
             display: flex;
             flex-direction: column;
+            max-width: 70%;
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: white;
             margin-bottom: 0;
             letter-spacing: -0.5px;
@@ -222,10 +231,10 @@
         }
 
         .logo .motto {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-style: italic;
             color: rgba(255, 255, 255, 0.85);
-            margin-top: 3px;
+            margin-top: 2px;
             font-weight: 400;
         }
 
@@ -236,7 +245,7 @@
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin-left: 20px;
             position: relative;
         }
 
@@ -244,7 +253,7 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             transition: var(--transition);
             position: relative;
             padding: 8px 0;
@@ -275,19 +284,21 @@
             background: none;
             border: none;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
             z-index: 1001;
+            padding: 5px;
         }
 
         /* Hero Section */
         .hero {
-            padding-top: 180px;
-            padding-bottom: 140px;
+            padding-top: 140px;
+            padding-bottom: 80px;
             background: var(--gradient-primary);
             color: white;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .hero::before {
@@ -302,48 +313,51 @@
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 100%;
             position: relative;
             z-index: 2;
             text-align: center;
             margin: 0 auto;
+            padding: 0 15px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
+            font-size: 2rem;
+            margin-bottom: 20px;
             color: white;
             line-height: 1.2;
             animation: fadeInUp 1s ease-out;
+            padding: 0 10px;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
             opacity: 0.9;
             animation: fadeInUp 1s ease-out 0.2s both;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 100%;
+            padding: 0 10px;
         }
 
         .hero-btns {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             animation: fadeInUp 1s ease-out 0.4s both;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
+            padding: 0 10px;
         }
 
         .hero-stats {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 60px;
+            gap: 30px;
             animation: fadeInUp 1s ease-out 0.6s both;
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
+            padding: 0 10px;
         }
 
         .stat-item {
@@ -351,68 +365,72 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            max-width: 200px;
+            max-width: 150px;
+            flex: 1;
+            min-width: 120px;
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--accent-teal);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-family: 'Montserrat', sans-serif;
             line-height: 1;
         }
 
         .stat-text {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
             line-height: 1.4;
         }
 
         .hero-image {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: 40%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org2000/svg" width="500" height="500" viewBox="0 0 500 500"><circle cx="250" cy="250" r="200" fill="%2300A8A8" opacity="0.08"/><rect x="100" y="100" width="300" height="300" fill="none" stroke="white" stroke-width="2" opacity="0.15" rx="20"/><path d="M50,450 L450,50" stroke="white" stroke-width="2" opacity="0.15"/><path d="M100,400 L400,100" stroke="white" stroke-width="2" opacity="0.15"/></svg>');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center right;
+            display: none;
         }
 
         /* About Section */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
             align-items: center;
+            width: 100%;
+        }
+
+        .about-text {
+            width: 100%;
+            padding: 0 10px;
         }
 
         .about-text h2 {
             color: var(--primary-dark);
-            font-size: 2.5rem;
-            margin-bottom: 25px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .about-text p {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            text-align: center;
         }
 
         .about-features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
+            width: 100%;
         }
 
         .feature {
             background: var(--neutral-light);
-            padding: 25px;
+            padding: 20px;
             border-radius: var(--border-radius);
             transition: var(--transition);
             border-left: 5px solid var(--accent-teal);
+            text-align: center;
         }
 
         .feature:hover {
@@ -422,12 +440,12 @@
 
         .feature i {
             color: var(--accent-teal);
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
         .feature h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--primary-dark);
             margin-bottom: 10px;
         }
@@ -437,13 +455,18 @@
             border-radius: var(--border-radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-dark);
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 350px;
         }
 
         .about-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
             transition: var(--transition);
+            object-fit: cover;
         }
 
         .about-image:hover img {
@@ -457,14 +480,15 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
         }
 
         .service-card {
             background: white;
             border-radius: var(--border-radius-lg);
-            padding: 45px 35px;
+            padding: 30px 20px;
             text-align: center;
             box-shadow: var(--shadow-light);
             transition: var(--transition);
@@ -489,9 +513,9 @@
         }
 
         .service-icon {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 30px;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
             background: var(--gradient-accent);
             border-radius: 50%;
             display: flex;
@@ -501,18 +525,19 @@
         }
 
         .service-icon i {
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: white;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary-dark);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .service-card p {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
         }
 
         .service-link {
@@ -522,6 +547,7 @@
             display: inline-flex;
             align-items: center;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .service-link:hover {
@@ -529,11 +555,21 @@
             transform: translateX(5px);
         }
 
-        /* Team Section */
+        /* Team Section - CORRECTION POUR LE CENTRAGE SUR PC */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+            justify-items: center; /* Centre les éléments dans leur cellule */
+        }
+
+        @media (min-width: 992px) {
+            .team-grid {
+                grid-template-columns: repeat(3, minmax(280px, 320px)); /* 3 colonnes fixes sur PC */
+                justify-content: center; /* Centre la grille entière */
+                gap: 40px;
+            }
         }
 
         .team-member {
@@ -543,6 +579,8 @@
             box-shadow: var(--shadow-light);
             transition: var(--transition);
             text-align: center;
+            width: 100%;
+            max-width: 320px; /* Limite la largeur max pour éviter l'étirement */
         }
 
         .team-member:hover {
@@ -553,13 +591,14 @@
         .member-image {
             height: 300px;
             overflow: hidden;
+            width: 100%;
         }
 
         .member-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 20%;
+            object-position: center top;
             transition: var(--transition);
         }
 
@@ -568,11 +607,12 @@
         }
 
         .member-info {
-            padding: 30px;
+            padding: 25px 15px;
+            width: 100%;
         }
 
         .member-info h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--primary-dark);
             margin-bottom: 5px;
         }
@@ -580,28 +620,29 @@
         .member-position {
             color: var(--accent-teal);
             font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1rem;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
         }
 
         .member-desc {
             color: var(--neutral-gray);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
 
         .member-social {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
+            width: 100%;
         }
 
         .member-social a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: var(--neutral-light);
             border-radius: 50%;
             color: var(--primary-dark);
@@ -618,9 +659,10 @@
         /* Partners Section */
         .partners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            width: 100%;
         }
 
         .partner-card {
@@ -630,6 +672,7 @@
             box-shadow: var(--shadow-light);
             transition: var(--transition);
             height: 100%;
+            width: 100%;
         }
 
         .partner-card:hover {
@@ -640,48 +683,50 @@
         .partner-header {
             background: var(--gradient-primary);
             color: white;
-            padding: 40px 30px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         .partner-header h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: white;
             margin-bottom: 10px;
         }
 
         .partner-header .acronym {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--accent-teal);
             margin-bottom: 5px;
         }
 
         .partner-header .full-name {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
         }
 
         .partner-content {
-            padding: 40px;
+            padding: 25px;
         }
 
         .partner-content h4 {
             color: var(--primary-dark);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-align: center;
         }
 
         .partner-content p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            text-align: center;
         }
 
         .partner-mission {
             background: var(--neutral-light);
-            padding: 25px;
+            padding: 20px;
             border-radius: var(--border-radius);
-            margin-top: 25px;
+            margin-top: 20px;
             border-left: 5px solid var(--accent-green);
         }
 
@@ -691,6 +736,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 1.1rem;
         }
 
         .partner-mission h5 i {
@@ -704,8 +750,9 @@
 
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
         }
 
         .event-card {
@@ -715,6 +762,7 @@
             box-shadow: var(--shadow-light);
             transition: var(--transition);
             height: 100%;
+            width: 100%;
         }
 
         .event-card:hover {
@@ -730,36 +778,36 @@
         }
 
         .event-day {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             line-height: 1;
         }
 
         .event-month {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
         }
 
         .event-content {
-            padding: 30px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             height: calc(100% - 70px);
         }
 
         .event-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--primary-dark);
             margin-bottom: 15px;
         }
 
         .event-meta {
             display: flex;
-            align-items: center;
-            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 15px;
             color: var(--neutral-gray);
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .event-meta i {
@@ -768,25 +816,28 @@
         }
 
         .event-content p {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             flex-grow: 1;
+            font-size: 0.95rem;
         }
 
         .event-actions {
             display: flex;
-            gap: 15px;
-            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .events-btn-container {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 40px;
+            width: 100%;
         }
 
         /* Events Page */
         .events-page {
             display: none;
-            padding-top: 120px;
+            padding-top: 100px;
+            width: 100%;
         }
 
         .events-page.active {
@@ -796,33 +847,37 @@
         .events-hero {
             background: var(--gradient-primary);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
+            width: 100%;
         }
 
         .events-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            padding: 0 15px;
         }
 
         .events-hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 800px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             opacity: 0.9;
+            padding: 0 15px;
         }
 
         .events-filter {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 60px;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 0 15px;
         }
 
         .filter-btn {
-            padding: 12px 25px;
+            padding: 10px 20px;
             background: white;
             border: 2px solid var(--primary-dark);
             border-radius: var(--border-radius);
@@ -830,6 +885,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .filter-btn.active, .filter-btn:hover {
@@ -839,20 +895,23 @@
 
         .events-page-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            padding: 0 15px;
         }
 
         .back-to-home {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 40px;
+            padding: 0 15px;
         }
 
         /* Event Detail Page */
         .event-detail-page {
             display: none;
-            padding-top: 120px;
+            padding-top: 100px;
+            width: 100%;
         }
 
         .event-detail-page.active {
@@ -862,22 +921,25 @@
         .event-detail-hero {
             background: var(--gradient-primary);
             color: white;
-            padding: 70px 0;
+            padding: 50px 0;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
+            width: 100%;
         }
 
         .event-detail-hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            padding: 0 15px;
         }
 
         .event-detail-meta {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 0 15px;
         }
 
         .event-detail-meta-item {
@@ -887,73 +949,78 @@
         }
 
         .event-detail-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+            padding: 0 15px;
+            width: 100%;
         }
 
         .event-detail-main h2 {
             color: var(--primary-dark);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
         .event-detail-main p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-size: 1rem;
         }
 
         .event-detail-sidebar {
             background: var(--neutral-light);
-            padding: 40px;
+            padding: 25px;
             border-radius: var(--border-radius-lg);
             height: fit-content;
+            width: 100%;
         }
 
         .event-detail-sidebar h3 {
             color: var(--primary-dark);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
 
         .event-detail-info {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .event-detail-info-item {
             display: flex;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .event-detail-info-item i {
             color: var(--accent-teal);
-            margin-right: 15px;
+            margin-right: 10px;
             margin-top: 3px;
         }
 
         .event-participants {
-            margin-top: 40px;
+            margin-top: 25px;
         }
 
         .participants-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .participant {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: white;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-light);
         }
 
         .participant img {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -961,7 +1028,8 @@
         /* Registration Page */
         .registration-page {
             display: none;
-            padding-top: 120px;
+            padding-top: 100px;
+            width: 100%;
         }
 
         .registration-page.active {
@@ -971,123 +1039,97 @@
         .registration-hero {
             background: var(--gradient-primary);
             color: white;
-            padding: 70px 0;
+            padding: 50px 0;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
+            width: 100%;
         }
 
         .registration-hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            padding: 0 15px;
         }
 
         .registration-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+            padding: 0 15px;
+            width: 100%;
         }
 
         .registration-form-container {
             background: white;
-            padding: 50px;
+            padding: 25px;
             border-radius: var(--border-radius-lg);
             box-shadow: var(--shadow-medium);
+            width: 100%;
         }
 
         .registration-form-container h2 {
             color: var(--primary-dark);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
         }
 
         .registration-summary {
             background: var(--neutral-light);
-            padding: 40px;
+            padding: 25px;
             border-radius: var(--border-radius-lg);
             height: fit-content;
+            width: 100%;
         }
 
         .registration-summary h3 {
             color: var(--primary-dark);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
 
         .registration-summary-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
             border-bottom: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.95rem;
         }
 
         .registration-total {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
-            padding-top: 20px;
+            margin-top: 15px;
+            padding-top: 15px;
             border-top: 2px solid var(--accent-teal);
             font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .payment-methods {
-            margin-top: 40px;
-        }
-
-        .payment-methods h4 {
-            margin-bottom: 20px;
-            color: var(--primary-dark);
-        }
-
-        .payment-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 20px;
-        }
-
-        .payment-option {
-            background: white;
-            border: 2px solid var(--neutral-light);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .payment-option:hover, .payment-option.selected {
-            border-color: var(--accent-teal);
-            box-shadow: var(--shadow-light);
-        }
-
-        .payment-option i {
-            font-size: 2rem;
-            color: var(--accent-teal);
-            margin-bottom: 10px;
+            font-size: 1.1rem;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 500;
             color: var(--primary-dark);
+            font-size: 0.95rem;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 15px 20px;
+            padding: 12px 15px;
             border: 1px solid var(--neutral-gray);
             border-radius: var(--border-radius);
             background: white;
             color: var(--neutral-dark);
             font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: var(--transition);
         }
 
@@ -1100,7 +1142,7 @@
         }
 
         .form-group textarea {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
 
@@ -1119,51 +1161,57 @@
         }
 
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
         }
 
         .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 25px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .contact-info p {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             opacity: 0.9;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            text-align: center;
+            padding: 0 10px;
         }
 
         .contact-details {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .contact-detail {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            padding: 0 10px;
         }
 
         .contact-detail i {
             color: var(--accent-teal);
-            font-size: 1.4rem;
-            margin-right: 20px;
+            font-size: 1.2rem;
+            margin-right: 15px;
             margin-top: 5px;
-            min-width: 25px;
+            min-width: 20px;
         }
 
         .contact-detail h4 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 5px;
         }
 
         .contact-form {
             background: rgba(255, 255, 255, 0.1);
-            padding: 50px;
+            padding: 25px;
             border-radius: var(--border-radius-lg);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
         }
 
         .contact-form .form-group input,
@@ -1189,20 +1237,22 @@
         footer {
             background-color: var(--primary-dark);
             color: white;
-            padding: 80px 0 40px;
+            padding: 50px 0 30px;
+            width: 100%;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding: 0 15px;
         }
 
         .footer-logo h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .footer-logo h3 span {
@@ -1212,18 +1262,18 @@
         .footer-logo p {
             opacity: 0.8;
             font-style: italic;
-            font-size: 1rem;
-            margin-bottom: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
         }
 
         .footer-links h4,
         .footer-contact h4,
         .footer-newsletter h4 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             color: white;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
 
         .footer-links h4::after,
@@ -1233,7 +1283,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 3px;
             background: var(--accent-teal);
         }
@@ -1243,7 +1293,7 @@
         }
 
         .footer-links ul li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-links ul li a {
@@ -1252,6 +1302,7 @@
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
+            font-size: 0.95rem;
         }
 
         .footer-links ul li a:hover {
@@ -1260,48 +1311,53 @@
         }
 
         .footer-links ul li a i {
-            margin-right: 10px;
-            font-size: 0.9rem;
+            margin-right: 8px;
+            font-size: 0.8rem;
         }
 
         .footer-contact p {
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
+            font-size: 0.95rem;
         }
 
         .footer-contact p i {
-            margin-right: 15px;
+            margin-right: 12px;
             color: var(--accent-teal);
             margin-top: 5px;
-            min-width: 20px;
+            min-width: 16px;
         }
 
         .footer-newsletter p {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             opacity: 0.9;
+            font-size: 0.95rem;
         }
 
         .newsletter-form {
             display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .newsletter-form input {
-            flex: 1;
-            padding: 15px;
+            padding: 12px;
             border: none;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            border-radius: var(--border-radius);
             font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
         }
 
         .newsletter-form button {
             background: var(--accent-teal);
             color: white;
             border: none;
-            padding: 0 25px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            padding: 12px;
+            border-radius: var(--border-radius);
             cursor: pointer;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .newsletter-form button:hover {
@@ -1310,16 +1366,16 @@
 
         .social-links {
             display: flex;
-            margin-top: 30px;
-            gap: 15px;
+            margin-top: 20px;
+            gap: 10px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
@@ -1334,10 +1390,11 @@
 
         .copyright {
             text-align: center;
-            padding-top: 40px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            padding: 0 15px;
         }
 
         /* Animations */
@@ -1385,22 +1442,23 @@
         }
 
         .loader {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border: 5px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             border-top-color: var(--accent-teal);
             animation: spin 1s linear infinite;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .loader-motto {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 600;
             text-align: center;
-            max-width: 300px;
+            max-width: 250px;
             font-style: italic;
+            padding: 0 15px;
         }
 
         @keyframes spin {
@@ -1410,75 +1468,187 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
+        @media (min-width: 576px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
             .section-header h2 {
+                font-size: 2.4rem;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .contact-content {
+                flex-direction: row;
+            }
+            
+            .contact-info, .contact-form {
+                flex: 1;
+            }
+            
+            .event-meta {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .newsletter-form {
+                flex-direction: row;
+            }
+            
+            .newsletter-form input {
+                border-radius: var(--border-radius) 0 0 var(--border-radius);
+                margin-bottom: 0;
+            }
+            
+            .newsletter-form button {
+                border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            }
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 90px 0;
+            }
+            
+            .hero {
+                padding-top: 150px;
+                padding-bottom: 90px;
+            }
+            
+            .hero h1 {
                 font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.6rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.15rem;
+            }
+            
+            .about-content {
+                flex-direction: row;
+                gap: 50px;
+            }
+            
+            .about-text {
+                text-align: left;
+            }
+            
+            .about-text h2, .about-text p {
+                text-align: left;
+            }
+            
+            .partner-content h4, .partner-content p {
+                text-align: left;
+            }
+            
+            .events-filter {
+                flex-wrap: nowrap;
+            }
+            
+            .event-actions {
+                flex-direction: row;
+            }
+            
+            .event-detail-content {
+                flex-direction: row;
+            }
+            
+            .registration-content {
+                flex-direction: row;
+            }
+            
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr 2fr;
+            }
+        }
+
+        @media (min-width: 992px) {
+            section {
+                padding: 100px 0;
+            }
+            
+            .hero {
+                padding-top: 180px;
+                padding-bottom: 120px;
             }
             
             .hero h1 {
                 font-size: 3rem;
             }
             
-            .partners-grid {
-                grid-template-columns: 1fr;
+            .hero p {
+                font-size: 1.3rem;
             }
             
-            .event-detail-content,
-            .registration-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 992px) {
-            section {
-                padding: 80px 0;
+            .section-header h2 {
+                font-size: 2.8rem;
             }
             
-            .hero {
-                padding-top: 160px;
-                padding-bottom: 100px;
+            .section-subtitle {
+                font-size: 1.2rem;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            
-            .about-image {
-                order: -1;
-            }
-            
-            .services-grid,
-            .team-grid,
-            .events-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 30px;
-            }
-            
-            .contact-form {
-                padding: 40px;
-            }
-            
-            .hero-stats {
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
                 gap: 40px;
             }
             
-            .stat-number {
-                font-size: 2.5rem;
+            /* Team Grid spécifique pour PC */
+            .team-grid {
+                grid-template-columns: repeat(3, minmax(280px, 320px));
+                justify-content: center;
+                gap: 40px;
             }
             
-            .partner-card {
-                max-width: 600px;
-                margin: 0 auto;
+            .partners-grid {
+                grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            }
+            
+            .contact-info h3 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                gap: 60px;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            .hero-image {
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 40%;
+                height: 100%;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org2000/svg" width="500" height="500" viewBox="0 0 500 500"><circle cx="250" cy="250" r="200" fill="%2300A8A8" opacity="0.08"/><rect x="100" y="100" width="300" height="300" fill="none" stroke="white" stroke-width="2" opacity="0.15" rx="20"/><path d="M50,450 L450,50" stroke="white" stroke-width="2" opacity="0.15"/><path d="M100,400 L400,100" stroke="white" stroke-width="2" opacity="0.15"/></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center right;
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             nav ul {
                 position: fixed;
                 top: 0;
@@ -1488,7 +1658,7 @@
                 background: var(--primary-dark);
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 100px 40px 40px;
+                padding: 100px 30px 30px;
                 transition: var(--transition);
                 box-shadow: var(--shadow-dark);
                 z-index: 999;
@@ -1499,12 +1669,12 @@
             }
             
             nav ul li {
-                margin: 0 0 25px 0;
+                margin: 0 0 20px 0;
                 width: 100%;
             }
             
             nav ul li a {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 padding: 10px 0;
                 display: block;
             }
@@ -1517,138 +1687,18 @@
                 position: relative;
             }
             
-            .hero {
-                padding-top: 140px;
-                padding-bottom: 80px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .hero-stats {
-                margin-top: 50px;
-                gap: 30px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .hero-image {
-                display: none;
-            }
-            
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-            
-            .btn {
-                padding: 14px 30px;
-            }
-            
-            .event-meta {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            
-            .event-actions {
-                flex-direction: column;
-            }
-            
-            .event-actions .btn {
-                width: 100%;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-            
-            .newsletter-form input {
-                border-radius: var(--border-radius);
-                margin-bottom: 15px;
-            }
-            
-            .newsletter-form button {
-                border-radius: var(--border-radius);
-                padding: 15px;
-            }
-            
-            .payment-options {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .events-page,
-            .event-detail-page,
-            .registration-page {
-                padding-top: 100px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            section {
-                padding: 70px 0;
-            }
-            
-            .hero {
-                padding-top: 130px;
-                padding-bottom: 70px;
-            }
-            
-            .hero h1 {
-                font-size: 1.9rem;
-            }
-            
-            .section-header h2 {
-                font-size: 1.9rem;
-            }
-            
-            .services-grid,
-            .team-grid,
-            .events-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-card,
-            .contact-form,
-            .registration-form-container,
-            .partner-content {
-                padding: 35px 25px;
-            }
-            
-            .partner-header {
-                padding: 30px 20px;
-            }
-            
             .hero-btns {
                 flex-direction: column;
-                width: 100%;
+                align-items: center;
             }
             
             .hero-btns .btn {
                 width: 100%;
-                margin-bottom: 15px;
+                max-width: 300px;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .stat-item {
+                min-width: 45%;
             }
             
             .events-filter {
@@ -1661,15 +1711,92 @@
                 max-width: 250px;
             }
             
-            .event-detail-meta {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
+            .team-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
             }
             
-            .partners-grid {
-                grid-template-columns: 1fr;
+            .team-member {
+                max-width: 100%;
             }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .team-grid {
+                grid-template-columns: repeat(2, minmax(280px, 1fr));
+                justify-content: center;
+            }
+            
+            .team-member {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+            
+            .stat-item {
+                min-width: 100%;
+            }
+            
+            .service-card, .contact-form, .registration-form-container, .partner-content {
+                padding: 20px 15px;
+            }
+            
+            .event-detail-meta {
+                align-items: flex-start;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Améliorations spécifiques pour centrage et cadrage */
+        .centered-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        /* Ajustements pour les images d'équipe par défaut */
+        .member-image {
+            background-color: var(--neutral-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .member-image img {
+            max-width: 100%;
         }
     </style>
 </head>
@@ -1736,7 +1863,6 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image"></div>
         </section>
 
         <!-- About Section -->
@@ -1748,6 +1874,10 @@
                 </div>
                 
                 <div class="about-content">
+                    <div class="about-image animate-on-scroll">
+                        <img src="photo2.jpg" alt="Équipe Datasecur Consulting">
+                    </div>
+                    
                     <div class="about-text animate-on-scroll">
                         <h2>Notre Mission : Votre Conformité</h2>
                         <p>Fondé à Lomé, Datasecur Consulting est un cabinet spécialisé dans l'accompagnement des entreprises vers la conformité RGPD et la sécurisation de leurs systèmes d'information. Notre équipe d'experts certifiés vous guide à chaque étape.</p>
@@ -1775,10 +1905,6 @@
                                 <p>Des solutions qui évoluent avec votre entreprise et la réglementation.</p>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="about-image animate-on-scroll">
-                        <img src="photo2.jpg" alt="Datasecur Consulting équipe">
                     </div>
                 </div>
             </div>
@@ -1850,7 +1976,7 @@
             </div>
         </section>
 
-        <!-- Team Section -->
+        <!-- Team Section - AVEC VRAIES PHOTOS -->
         <section class="team" id="team">
             <div class="container">
                 <div class="section-header">
@@ -1861,53 +1987,54 @@
                 <div class="team-grid">
                     <div class="team-member animate-on-scroll">
                         <div class="member-image">
-                            <img src="photo5.jpg" alt="Kodjo Mensah">
+                            <img src="photo5.jpg" alt="Kodjo Mensah - CEO & Expert RGPD">
                         </div>
                         <div class="member-info">
                             <h3>Kodjo Mensah</h3>
                             <div class="member-position">CEO & Expert RGPD</div>
                             <p class="member-desc">15 ans d'expérience en conformité numérique. Certifié CIPM, CIPP/E. Ancien consultant pour la Commission de l'UEMOA.</p>
                             <div class="member-social">
-                                <a href="https://linkedin.com/in/kodjo-mensah" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://twitter.com/kodjomensah" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a href="mailto:kodjo.mensah@datasecur.tg"><i class="fas fa-envelope"></i></a>
+                                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:contact@datasecur-consulting.tg"><i class="fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="team-member animate-on-scroll">
                         <div class="member-image">
-                            <img src="photo.jpg" alt="Ama Adjo">
+                            <img src="photo.jpg" alt="Shalom-Kevin D'Almeida - Responsable Cybersécurité">
                         </div>
                         <div class="member-info">
                             <h3>Shalom-Kevin D'Almeida</h3>
                             <div class="member-position">Responsable Cybersécurité</div>
                             <p class="member-desc">Expert en sécurité des systèmes d'information. Certifiée CISSP, CEH. 12 ans d'expérience dans le secteur bancaire.</p>
                             <div class="member-social">
-                                <a href="https://linkedin.com/in/ama-adjo" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://twitter.com/amaadjo" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a href="mailto:ama.adjo@datasecur.tg"><i class="fas fa-envelope"></i></a>
+                                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:contact@datasecur-consulting.tg"><i class="fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="team-member animate-on-scroll">
                         <div class="member-image">
-                            <img src="photo6.jpg" alt="Komlan Agbeko">
+                            <img src="photo6.jpg" alt="Anna Agbeko - Consultant Juridique">
                         </div>
                         <div class="member-info">
                             <h3>Anna Agbeko</h3>
                             <div class="member-position">Consultant Juridique</div>
                             <p class="member-desc">Spécialiste en droit du numérique et protection des données. Doctorat en droit numérique de l'Université de Paris-Dauphine.</p>
                             <div class="member-social">
-                                <a href="https://linkedin.com/in/komlan-agbeko" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://twitter.com/komlanagbeko" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a href="mailto:komlan.agbeko@datasecur.tg"><i class="fas fa-envelope"></i></a>
+                                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:contact@datasecur-consulting.tg"><i class="fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
-                    
-        
+                </div>
+            </div>
+        </section>
 
         <!-- Partners Section -->
         <section class="partners" id="partners">
@@ -2141,10 +2268,10 @@
                         <p>Expert en mise en conformité RGPD et sécurisation durable des activités numériques au Togo et en Afrique de l'Ouest.</p>
                         
                         <div class="social-links">
-                            <a href="https://linkedin.com/company/datasecur-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://twitter.com/datasecurtg" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a href="https://facebook.com/datasecurconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://instagram.com/datasecurconsulting" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     
@@ -2237,11 +2364,11 @@
                         <div class="event-meta">
                             <span><i class="fas fa-clock"></i> 9h - 17h</span>
                             <span><i class="fas fa-map-marker-alt"></i> Lomé, Hôtel Sarakawa</span>
-                            <span><i class="fas fa-user"></i> Ama Adjo</span>
+                            <span><i class="fas fa-user"></i> Shalom-Kevin D'Almeida</span>
                         </div>
                         <p>Formation intensive d'une journée pour apprendre à réaliser un audit de sécurité de vos systèmes d'information. Cas pratiques et outils concrets.</p>
                         <div class="event-actions">
-                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="2">S'inscrire (50 000 FCFA)</a>
+                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="2">S'inscrire</a>
                             <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="2">Voir détails</a>
                         </div>
                     </div>
@@ -2261,7 +2388,7 @@
                         </div>
                         <p>Événement majeur co-organisé avec l'IPDCP-TOGO. Tables rondes, ateliers et networking avec des experts internationaux.</p>
                         <div class="event-actions">
-                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="3">S'inscrire (Gratuit)</a>
+                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="3">S'inscrire</a>
                             <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="3">Voir détails</a>
                         </div>
                     </div>
@@ -2277,11 +2404,11 @@
                         <div class="event-meta">
                             <span><i class="fas fa-clock"></i> 3 jours</span>
                             <span><i class="fas fa-map-marker-alt"></i> Lomé, Centre de Formation</span>
-                            <span><i class="fas fa-user"></i> Komlan Agbeko & Séna Dossou</span>
+                            <span><i class="fas fa-user"></i> Anna Agbeko & Experts</span>
                         </div>
                         <p>Formation certifiante pour devenir DPO (Data Protection Officer). Programme complet adapté au contexte togolais et africain.</p>
                         <div class="event-actions">
-                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="4">S'inscrire (250 000 FCFA)</a>
+                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="4">S'inscrire</a>
                             <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="4">Voir détails</a>
                         </div>
                     </div>
@@ -2297,7 +2424,7 @@
                         <div class="event-meta">
                             <span><i class="fas fa-clock"></i> 10h - 12h</span>
                             <span><i class="fas fa-video"></i> En ligne</span>
-                            <span><i class="fas fa-user"></i> Ama Adjo</span>
+                            <span><i class="fas fa-user"></i> Shalom-Kevin D'Almeida</span>
                         </div>
                         <p>Webinaire spécialisé sur les enjeux de cybersécurité pour les banques et institutions financières au Togo.</p>
                         <div class="event-actions">
@@ -2404,24 +2531,6 @@
                             <li>Échanges fructueux sur les défis spécifiques des PME locales</li>
                             <li>Partage d'outils pratiques pour démarrer la conformité</li>
                         </ul>
-                        
-                        <h3>Témoignages des participants :</h3>
-                        <div class="participants-list">
-                            <div class="participant">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participant">
-                                <div>
-                                    <strong>Koffi Adjo</strong><br>
-                                    "Très instructif, j'ai maintenant une feuille de route claire."
-                                </div>
-                            </div>
-                            <div class="participant">
-                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participante">
-                                <div>
-                                    <strong>Akossiwa Mensah</strong><br>
-                                    "Les exemples concrets étaient très utiles pour mon entreprise."
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 
@@ -2452,8 +2561,8 @@
                         <div class="event-detail-info-item">
                             <i class="fas fa-tag"></i>
                             <div>
-                                <strong>Tarif</strong><br>
-                                <span id="sidebarPrice">Gratuit</span>
+                                <strong>Participation</strong><br>
+                                <span id="sidebarPrice">Gratuite - Co-organisé</span>
                             </div>
                         </div>
                     </div>
@@ -2461,24 +2570,6 @@
                     <div class="event-actions" style="margin-top: 30px;">
                         <a href="#" class="btn btn-primary btn-center" id="registerForEvent">S'inscrire à cet événement</a>
                         <a href="#" class="btn btn-secondary btn-center" id="backToEvents">Retour aux événements</a>
-                    </div>
-                    
-                    <div class="event-participants" id="eventParticipants" style="display: none;">
-                        <h3>Participants (42)</h3>
-                        <div class="participants-list">
-                            <div class="participant">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participant">
-                                <div>Koffi Adjo</div>
-                            </div>
-                            <div class="participant">
-                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participante">
-                                <div>Akossiwa Mensah</div>
-                            </div>
-                            <div class="participant">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participant">
-                                <div>Komlan Agbeko</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -2541,43 +2632,9 @@
                             <textarea id="regComments" placeholder="Avez-vous des questions spécifiques ou des besoins particuliers ?"></textarea>
                         </div>
                         
-                        <div class="payment-methods" id="paymentSection" style="display: none;">
-                            <h4>Méthode de paiement</h4>
-                            <div class="payment-options">
-                                <div class="payment-option" data-payment="mobile-money">
-                                    <i class="fas fa-mobile-alt"></i>
-                                    <div>Mobile Money</div>
-                                </div>
-                                <div class="payment-option" data-payment="carte">
-                                    <i class="fas fa-credit-card"></i>
-                                    <div>Carte bancaire</div>
-                                </div>
-                                <div class="payment-option" data-payment="virement">
-                                    <i class="fas fa-university"></i>
-                                    <div>Virement bancaire</div>
-                                </div>
-                                <div class="payment-option" data-payment="especes">
-                                    <i class="fas fa-money-bill-wave"></i>
-                                    <div>Espèces</div>
-                                </div>
-                            </div>
-                            
-                            <div id="mobileMoneyDetails" style="display: none; margin-top: 20px;">
-                                <div class="form-group">
-                                    <label>Numéro Mobile Money</label>
-                                    <input type="tel" placeholder="+228 XX XX XX XX">
-                                </div>
-                                <div class="form-group">
-                                    <label>Opérateur</label>
-                                    <select>
-                                        <option>FlOoz</option>
-                                        <option>T-Money</option>
-                                    </select>
-                                </div>
-                                <p style="font-size: 0.9rem; color: var(--accent-teal);">
-                                    <i class="fas fa-info-circle"></i> Vous recevrez un message de paiement après soumission du formulaire.
-                                </p>
-                            </div>
+                        <div style="margin-top: 30px; padding: 20px; background: rgba(0, 168, 168, 0.1); border-radius: var(--border-radius);">
+                            <h4 style="color: var(--accent-teal); margin-bottom: 10px;"><i class="fas fa-info-circle"></i> Important</h4>
+                            <p style="font-size: 0.9rem;">Cet événement est co-organisé par Datasecur Consulting et ses partenaires institutionnels. L'inscription est gratuite. Une confirmation vous sera envoyée par email dans les 24 heures.</p>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-center" style="margin-top: 30px;">Finaliser l'inscription</button>
@@ -2603,22 +2660,13 @@
                         <span id="summarySpeaker">Kodjo Mensah</span>
                     </div>
                     <div class="registration-summary-item">
-                        <span>Tarif de base :</span>
-                        <span id="summaryBasePrice">0 FCFA</span>
-                    </div>
-                    <div class="registration-summary-item" id="summaryParticipantsItem" style="display: none;">
-                        <span>Participants supplémentaires :</span>
-                        <span id="summaryAdditionalPrice">0 FCFA</span>
-                    </div>
-                    
-                    <div class="registration-total">
-                        <span>Total à payer :</span>
-                        <span id="summaryTotalPrice">0 FCFA</span>
+                        <span>Participation :</span>
+                        <span id="summaryBasePrice">Gratuite</span>
                     </div>
                     
                     <div style="margin-top: 30px; padding: 20px; background: rgba(0, 168, 168, 0.1); border-radius: var(--border-radius);">
-                        <h4 style="color: var(--accent-teal); margin-bottom: 10px;"><i class="fas fa-info-circle"></i> Important</h4>
-                        <p style="font-size: 0.9rem;">Une confirmation d'inscription vous sera envoyée par email dans les 24 heures. Pour les événements payants, votre place sera confirmée après réception du paiement.</p>
+                        <h4 style="color: var(--accent-teal); margin-bottom: 10px;"><i class="fas fa-handshake"></i> Co-organisation</h4>
+                        <p style="font-size: 0.9rem;">Cet événement est co-organisé par Datasecur Consulting en partenariat avec l'IPDCP-TOGO et le FIPDCP-TOGO.</p>
                     </div>
                 </div>
             </div>
@@ -2649,6 +2697,18 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                
+                // For anchor links on main page, scroll smoothly
+                if (link.getAttribute('href').startsWith('#') && link.getAttribute('href') !== '#') {
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement && document.getElementById('mainPage').style.display !== 'none') {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
             });
         });
         
@@ -2677,7 +2737,7 @@
             this.reset();
         });
         
-        // Event data
+        // Event data - TOUS LES ÉVÉNEMENTS SONT GRATUITS MAINTENANT
         const events = {
             1: {
                 title: "RGPD pour les PME togolaises : Par où commencer ?",
@@ -2693,8 +2753,8 @@
                 title: "Atelier pratique : Réaliser un audit de sécurité",
                 date: "28 Juin 2023, 9h - 17h",
                 location: "Lomé, Hôtel Sarakawa",
-                speaker: "Ama Adjo",
-                price: "50 000 FCFA",
+                speaker: "Shalom-Kevin D'Almeida",
+                price: "Gratuit",
                 description: "Formation intensive d'une journée pour apprendre à réaliser un audit de sécurité de vos systèmes d'information.",
                 category: "atelier",
                 past: false
@@ -2713,8 +2773,8 @@
                 title: "Formation DPO (Data Protection Officer)",
                 date: "12-14 Juillet 2023, 9h-17h",
                 location: "Lomé, Centre de Formation",
-                speaker: "Komlan Agbeko & Séna Dossou",
-                price: "250 000 FCFA",
+                speaker: "Anna Agbeko & Experts",
+                price: "Gratuit",
                 description: "Formation certifiante pour devenir DPO (Data Protection Officer). Programme complet adapté au contexte togolais et africain.",
                 category: "formation",
                 past: false
@@ -2723,7 +2783,7 @@
                 title: "Cybersécurité pour les institutions financières",
                 date: "20 Mai 2023, 10h - 12h",
                 location: "En ligne (Webinaire)",
-                speaker: "Ama Adjo",
+                speaker: "Shalom-Kevin D'Almeida",
                 price: "Gratuit",
                 description: "Webinaire spécialisé sur les enjeux de cybersécurité pour les banques et institutions financières au Togo.",
                 category: "webinaire passe",
@@ -2734,7 +2794,7 @@
                 date: "05 Avril 2023, 9h - 16h",
                 location: "Lomé, Immeuble Datasecur",
                 speaker: "Kodjo Mensah",
-                price: "75 000 FCFA",
+                price: "Gratuit",
                 description: "Atelier pratique pour mettre en œuvre une conformité RGPD complète dans votre organisation. Méthodologie et outils fournis.",
                 category: "atelier passe",
                 past: true
@@ -2784,21 +2844,18 @@
                 document.getElementById('sidebarDate').textContent = event.date;
                 document.getElementById('sidebarLocation').textContent = event.location;
                 document.getElementById('sidebarSpeaker').textContent = event.speaker;
-                document.getElementById('sidebarPrice').textContent = event.price;
+                document.getElementById('sidebarPrice').textContent = "Gratuite - Co-organisé";
                 
                 // Show/hide past event content
                 const pastContent = document.getElementById('eventPastContent');
-                const participantsSection = document.getElementById('eventParticipants');
                 const registerButton = document.getElementById('registerForEvent');
                 
                 if (event.past) {
                     pastContent.style.display = 'block';
-                    participantsSection.style.display = 'block';
                     registerButton.style.display = 'none';
                     document.getElementById('eventPastDate').textContent = event.date.split(',')[0];
                 } else {
                     pastContent.style.display = 'none';
-                    participantsSection.style.display = 'none';
                     registerButton.style.display = 'block';
                 }
                 
@@ -2843,23 +2900,7 @@
                 document.getElementById('summaryDate').textContent = event.date;
                 document.getElementById('summaryFormat').textContent = event.location.includes('En ligne') ? 'Webinaire en ligne' : 'Présentiel';
                 document.getElementById('summarySpeaker').textContent = event.speaker;
-                
-                // Parse price
-                let basePrice = 0;
-                if (event.price.includes('FCFA')) {
-                    basePrice = parseInt(event.price.replace(/[^0-9]/g, ''));
-                }
-                
-                document.getElementById('summaryBasePrice').textContent = basePrice === 0 ? '0 FCFA' : `${basePrice.toLocaleString()} FCFA`;
-                document.getElementById('summaryTotalPrice').textContent = basePrice === 0 ? '0 FCFA' : `${basePrice.toLocaleString()} FCFA`;
-                
-                // Show/hide payment section
-                const paymentSection = document.getElementById('paymentSection');
-                if (basePrice > 0) {
-                    paymentSection.style.display = 'block';
-                } else {
-                    paymentSection.style.display = 'none';
-                }
+                document.getElementById('summaryBasePrice').textContent = 'Gratuite';
                 
                 // Store current event ID
                 document.getElementById('registrationPage').setAttribute('data-current-event', eventId);
@@ -2901,7 +2942,7 @@
                 e.preventDefault();
                 
                 const targetElement = document.querySelector(targetId);
-                if (targetElement) {
+                if (targetElement && document.getElementById('mainPage').style.display !== 'none') {
                     window.scrollTo({
                         top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
@@ -3025,29 +3066,6 @@
             });
         });
         
-        // Payment option selection
-        document.querySelectorAll('.payment-option').forEach(option => {
-            option.addEventListener('click', function() {
-                // Remove selected class from all options
-                document.querySelectorAll('.payment-option').forEach(opt => {
-                    opt.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked option
-                this.classList.add('selected');
-                
-                // Show/hide payment details
-                const paymentType = this.getAttribute('data-payment');
-                const mobileMoneyDetails = document.getElementById('mobileMoneyDetails');
-                
-                if (paymentType === 'mobile-money') {
-                    mobileMoneyDetails.style.display = 'block';
-                } else {
-                    mobileMoneyDetails.style.display = 'none';
-                }
-            });
-        });
-        
         // Registration form submission
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -3056,24 +3074,11 @@
             const eventId = document.getElementById('registrationPage').getAttribute('data-current-event');
             const event = events[eventId];
             
-            // Check if payment method is selected for paid events
-            let paymentMethod = null;
-            if (event.price !== 'Gratuit') {
-                const selectedPayment = document.querySelector('.payment-option.selected');
-                if (!selectedPayment) {
-                    alert('Veuillez sélectionner une méthode de paiement.');
-                    return;
-                }
-                paymentMethod = selectedPayment.getAttribute('data-payment');
-            }
-            
             // Show success message
-            alert(`Merci pour votre inscription à "${event.title}"! Vous recevrez une confirmation par email dans les 24 heures.${event.price !== 'Gratuit' ? ` Veuillez effectuer le paiement via ${paymentMethod}.` : ''}`);
+            alert(`Merci pour votre inscription à "${event.title}"! Vous recevrez une confirmation par email dans les 24 heures. Cet événement est co-organisé gratuitement par Datasecur Consulting et ses partenaires institutionnels.`);
             
             // Reset form and go back to events page
             this.reset();
-            document.querySelector('.payment-option.selected')?.classList.remove('selected');
-            document.getElementById('mobileMoneyDetails').style.display = 'none';
             
             // Show page transition
             document.getElementById('pageTransition').classList.remove('hidden');
@@ -3091,32 +3096,19 @@
             }, 500);
         });
         
-        // Update total price when participants change
-        document.getElementById('regParticipants').addEventListener('change', function() {
-            const eventId = document.getElementById('registrationPage').getAttribute('data-current-event');
-            const event = events[eventId];
-            
-            // Parse base price
-            let basePrice = 0;
-            if (event.price.includes('FCFA')) {
-                basePrice = parseInt(event.price.replace(/[^0-9]/g, ''));
+        // Update button text for paid events to remove prices
+        document.querySelectorAll('.register-btn').forEach(btn => {
+            const originalText = btn.textContent;
+            // Remove any price information from button text
+            btn.textContent = originalText.replace(/\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
+            if (btn.textContent === 'S\'inscrire gratuitement') {
+                btn.textContent = 'S\'inscrire';
             }
-            
-            const participants = parseInt(this.value);
-            
-            if (participants > 1 && basePrice > 0) {
-                // Calculate total (first participant at full price, others at 20% discount)
-                const additionalParticipants = participants - 1;
-                const discountPrice = Math.round(basePrice * 0.8);
-                const total = basePrice + (additionalParticipants * discountPrice);
-                
-                document.getElementById('summaryParticipantsItem').style.display = 'flex';
-                document.getElementById('summaryAdditionalPrice').textContent = `${(additionalParticipants * discountPrice).toLocaleString()} FCFA`;
-                document.getElementById('summaryTotalPrice').textContent = `${total.toLocaleString()} FCFA`;
-            } else {
-                document.getElementById('summaryParticipantsItem').style.display = 'none';
-                document.getElementById('summaryTotalPrice').textContent = basePrice === 0 ? '0 FCFA' : `${basePrice.toLocaleString()} FCFA`;
-            }
+        });
+        
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            animateOnScroll();
         });
     </script>
 </body>
