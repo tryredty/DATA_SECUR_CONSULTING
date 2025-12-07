@@ -1,0 +1,3123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datasecur Consulting - Votre conformité, notre engagement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0A2342;
+            --primary-blue: #1D4E89;
+            --primary-light: #3B7CB0;
+            --accent-teal: #00A8A8;
+            --accent-green: #2E8B57;
+            --neutral-light: #F5F7FA;
+            --neutral-gray: #8A8D93;
+            --neutral-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 50%, var(--primary-light) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-green) 100%);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-dark: 0 15px 40px rgba(0, 0, 0, 0.2);
+            --border-radius: 10px;
+            --border-radius-lg: 15px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--neutral-dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-header h2 span {
+            color: var(--accent-teal);
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-accent);
+            border-radius: 5px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--neutral-gray);
+            max-width: 700px;
+            margin: 25px auto 0;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-dark);
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-white:hover {
+            background: var(--neutral-light);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-center {
+            display: block;
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: var(--transition);
+            background-color: rgba(10, 35, 66, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: var(--shadow-dark);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 0;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            color: var(--accent-teal);
+        }
+
+        .logo .motto {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 3px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-teal);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-teal);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 140px;
+            background: var(--gradient-primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><path d="M0,0 L200,0 L200,200 Z" fill="white" opacity="0.03"/><circle cx="150" cy="50" r="20" fill="white" opacity="0.05"/><circle cx="50" cy="150" r="30" fill="white" opacity="0.05"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: white;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            margin-bottom: 80px;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-teal);
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+        }
+
+        .stat-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org2000/svg" width="500" height="500" viewBox="0 0 500 500"><circle cx="250" cy="250" r="200" fill="%2300A8A8" opacity="0.08"/><rect x="100" y="100" width="300" height="300" fill="none" stroke="white" stroke-width="2" opacity="0.15" rx="20"/><path d="M50,450 L450,50" stroke="white" stroke-width="2" opacity="0.15"/><path d="M100,400 L400,100" stroke="white" stroke-width="2" opacity="0.15"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center right;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            background: var(--neutral-light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border-left: 5px solid var(--accent-teal);
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .feature i {
+            color: var(--accent-teal);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-dark);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--neutral-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 45px 35px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 30px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-light);
+        }
+
+        .service-icon i {
+            font-size: 2.3rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .service-card p {
+            margin-bottom: 25px;
+        }
+
+        .service-link {
+            color: var(--accent-teal);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 30px;
+        }
+
+        .member-info h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .member-position {
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .member-desc {
+            color: var(--neutral-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .member-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--neutral-light);
+            border-radius: 50%;
+            color: var(--primary-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .member-social a:hover {
+            background: var(--accent-teal);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .partner-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .partner-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .partner-header h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .partner-header .acronym {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-teal);
+            margin-bottom: 5px;
+        }
+
+        .partner-header .full-name {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .partner-content {
+            padding: 40px;
+        }
+
+        .partner-content h4 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .partner-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .partner-mission {
+            background: var(--neutral-light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-top: 25px;
+            border-left: 5px solid var(--accent-green);
+        }
+
+        .partner-mission h5 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .partner-mission h5 i {
+            color: var(--accent-green);
+        }
+
+        /* Events Section */
+        .events {
+            background-color: var(--neutral-light);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .event-date {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .event-day {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .event-month {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .event-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 70px);
+        }
+
+        .event-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .event-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--neutral-gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .event-meta i {
+            margin-right: 8px;
+            color: var(--accent-teal);
+        }
+
+        .event-content p {
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .event-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .events-btn-container {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Events Page */
+        .events-page {
+            display: none;
+            padding-top: 120px;
+        }
+
+        .events-page.active {
+            display: block;
+        }
+
+        .events-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .events-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .events-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .events-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 25px;
+            background: white;
+            border: 2px solid var(--primary-dark);
+            border-radius: var(--border-radius);
+            color: var(--primary-dark);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .events-page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Event Detail Page */
+        .event-detail-page {
+            display: none;
+            padding-top: 120px;
+        }
+
+        .event-detail-page.active {
+            display: block;
+        }
+
+        .event-detail-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 70px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .event-detail-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .event-detail-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .event-detail-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .event-detail-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .event-detail-main h2 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .event-detail-main p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .event-detail-sidebar {
+            background: var(--neutral-light);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            height: fit-content;
+        }
+
+        .event-detail-sidebar h3 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .event-detail-info {
+            margin-bottom: 30px;
+        }
+
+        .event-detail-info-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .event-detail-info-item i {
+            color: var(--accent-teal);
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+
+        .event-participants {
+            margin-top: 40px;
+        }
+
+        .participants-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .participant {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+        }
+
+        .participant img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Registration Page */
+        .registration-page {
+            display: none;
+            padding-top: 120px;
+        }
+
+        .registration-page.active {
+            display: block;
+        }
+
+        .registration-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 70px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .registration-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .registration-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .registration-form-container {
+            background: white;
+            padding: 50px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .registration-form-container h2 {
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+        }
+
+        .registration-summary {
+            background: var(--neutral-light);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            height: fit-content;
+        }
+
+        .registration-summary h3 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .registration-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .registration-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--accent-teal);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .payment-methods {
+            margin-top: 40px;
+        }
+
+        .payment-methods h4 {
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .payment-option {
+            background: white;
+            border: 2px solid var(--neutral-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .payment-option:hover, .payment-option.selected {
+            border-color: var(--accent-teal);
+            box-shadow: var(--shadow-light);
+        }
+
+        .payment-option i {
+            font-size: 2rem;
+            color: var(--accent-teal);
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--neutral-gray);
+            border-radius: var(--border-radius);
+            background: white;
+            color: var(--neutral-dark);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(0, 168, 168, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .contact .section-header h2 {
+            color: white;
+        }
+
+        .contact .section-header h2::after {
+            background: var(--accent-teal);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .contact-info p {
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .contact-details {
+            margin-bottom: 50px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-detail i {
+            color: var(--accent-teal);
+            font-size: 1.4rem;
+            margin-right: 20px;
+            margin-top: 5px;
+            min-width: 25px;
+        }
+
+        .contact-detail h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: var(--border-radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-form .form-group input,
+        .contact-form .form-group textarea,
+        .contact-form .form-group select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .contact-form .form-group input:focus,
+        .contact-form .form-group textarea:focus,
+        .contact-form .form-group select:focus {
+            border-color: var(--accent-teal);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-form .form-group label {
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo h3 span {
+            color: var(--accent-teal);
+        }
+
+        .footer-logo p {
+            opacity: 0.8;
+            font-style: italic;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-newsletter h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h4::after,
+        .footer-contact h4::after,
+        .footer-newsletter h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-teal);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-teal);
+            transform: translateX(5px);
+        }
+
+        .footer-links ul li a i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact p i {
+            margin-right: 15px;
+            color: var(--accent-teal);
+            margin-top: 5px;
+            min-width: 20px;
+        }
+
+        .footer-newsletter p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .newsletter-form button {
+            background: var(--accent-teal);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--accent-green);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-teal);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Page Transition */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-dark);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            flex-direction: column;
+        }
+
+        .page-transition.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--accent-teal);
+            animation: spin 1s linear infinite;
+            margin-bottom: 30px;
+        }
+
+        .loader-motto {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            max-width: 300px;
+            font-style: italic;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-detail-content,
+            .registration-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .hero {
+                padding-top: 160px;
+                padding-bottom: 100px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .services-grid,
+            .team-grid,
+            .events-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 30px;
+            }
+            
+            .contact-form {
+                padding: 40px;
+            }
+            
+            .hero-stats {
+                gap: 40px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .partner-card {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--primary-dark);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 40px 40px;
+                transition: var(--transition);
+                box-shadow: var(--shadow-dark);
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin: 0 0 25px 0;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                font-size: 1.2rem;
+                padding: 10px 0;
+                display: block;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-container {
+                position: relative;
+            }
+            
+            .hero {
+                padding-top: 140px;
+                padding-bottom: 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-stats {
+                margin-top: 50px;
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+            }
+            
+            .event-meta {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .event-actions {
+                flex-direction: column;
+            }
+            
+            .event-actions .btn {
+                width: 100%;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: var(--border-radius);
+                margin-bottom: 15px;
+            }
+            
+            .newsletter-form button {
+                border-radius: var(--border-radius);
+                padding: 15px;
+            }
+            
+            .payment-options {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .events-page,
+            .event-detail-page,
+            .registration-page {
+                padding-top: 100px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .hero {
+                padding-top: 130px;
+                padding-bottom: 70px;
+            }
+            
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+            
+            .services-grid,
+            .team-grid,
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card,
+            .contact-form,
+            .registration-form-container,
+            .partner-content {
+                padding: 35px 25px;
+            }
+            
+            .partner-header {
+                padding: 30px 20px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .events-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .event-detail-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Loader -->
+    <div class="page-transition" id="pageTransition">
+        <div class="loader"></div>
+        <div class="loader-motto">Votre conformité, notre engagement</div>
+    </div>
+
+    <!-- Main Page -->
+    <div id="mainPage">
+        <!-- Header & Navigation -->
+        <header id="header">
+            <div class="container header-container">
+                <div class="logo">
+                    <h1>Datasecur<span>Consulting</span></h1>
+                    <div class="motto">Votre conformité, notre engagement</div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Équipe</a></li>
+                        <li><a href="#partners">Partenaires</a></li>
+                        <li><a href="#events">Événements</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" id="viewEventsPage">Tous les événements</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Conformité RGPD & Sécurité Numérique au Togo</h1>
+                    <p>Datasecur Consulting accompagne les entreprises et institutions togolaises dans la mise en conformité et la sécurisation durable de leurs activités numériques, en partenariat avec l'IPDCP-Togo et le FIPDCP-TOGO.</p>
+                    <div class="hero-btns">
+                        <a href="#services" class="btn btn-primary">Découvrir nos services</a>
+                        <a href="#contact" class="btn btn-white">Demander un audit</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-text">Clients accompagnés avec succès</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-text">Conformité RGPD garantie</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-text">Support technique disponible</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>À Propos de <span>Datasecur Consulting</span></h2>
+                    <p class="section-subtitle">Expert en mise en conformité RGPD et sécurisation des systèmes d'information au Togo et en Afrique de l'Ouest.</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text animate-on-scroll">
+                        <h2>Notre Mission : Votre Conformité</h2>
+                        <p>Fondé à Lomé, Datasecur Consulting est un cabinet spécialisé dans l'accompagnement des entreprises vers la conformité RGPD et la sécurisation de leurs systèmes d'information. Notre équipe d'experts certifiés vous guide à chaque étape.</p>
+                        <p>Notre devise, <strong>"Votre conformité, notre engagement"</strong>, traduit notre philosophie : nous nous engageons pleinement pour accompagner nos clients vers une conformité durable et une sécurité renforcée de leurs données sensibles.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Expertise Certifiée</h3>
+                                <p>Une équipe d'experts certifiés en cybersécurité et protection des données.</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-handshake"></i>
+                                <h3>Accompagnement Sur-Mesure</h3>
+                                <p>Un suivi personnalisé tout au long de votre processus de conformité.</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-globe-africa"></i>
+                                <h3>Expertise Régionale</h3>
+                                <p>Spécialistes des enjeux spécifiques du contexte africain et togolais.</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-certificate"></i>
+                                <h3>Conformité Durable</h3>
+                                <p>Des solutions qui évoluent avec votre entreprise et la réglementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image animate-on-scroll">
+                        <img src="photo2.jpg" alt="Datasecur Consulting équipe">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nos <span>Services Experts</span></h2>
+                    <p class="section-subtitle">Une gamme complète de services pour garantir votre conformité RGPD et la sécurité de vos systèmes d'information.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3>Audit de Conformité RGPD</h3>
+                        <p>Évaluation complète de votre niveau de conformité au RGPD et aux réglementations locales sur la protection des données.</p>
+                        <a href="#contact" class="service-link">Demander un audit <i class="fas fa-arrow-right"></i></a>
+                    </div> 
+                    
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Protection des Données Personnelles</h3>
+                        <p>Mise en place de politiques et procédures pour garantir la protection des données personnelles dans votre organisation.</p>
+                        <a href="#contact" class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Sécurisation des Systèmes</h3>
+                        <p>Renforcement de la sécurité de vos infrastructures informatiques contre les cybermenaces et les violations de données.</p>
+                        <a href="#contact" class="service-link">Protéger mes systèmes <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Formation & Sensibilisation</h3>
+                        <p>Programmes de formation adaptés pour vos équipes sur la protection des données et la cybersécurité.</p>
+                        <a href="#contact" class="service-link">Voir les formations <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Accompagnement à la Certification</h3>
+                        <p>Support pour l'obtention de certifications en sécurité et protection des données reconnues internationalement.</p>
+                        <a href="#contact" class="service-link">Obtenir une certification <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Support Continu & Veille</h3>
+                        <p>Un accompagnement permanent pour maintenir votre conformité face à l'évolution des réglementations.</p>
+                        <a href="#contact" class="service-link">Découvrir notre support <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team" id="team">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Notre <span>Équipe d'Experts</span></h2>
+                    <p class="section-subtitle">Une équipe pluridisciplinaire de professionnels certifiés, passionnés par la sécurité numérique et la protection des données.</p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-member animate-on-scroll">
+                        <div class="member-image">
+                            <img src="photo5.jpg" alt="Kodjo Mensah">
+                        </div>
+                        <div class="member-info">
+                            <h3>Kodjo Mensah</h3>
+                            <div class="member-position">CEO & Expert RGPD</div>
+                            <p class="member-desc">15 ans d'expérience en conformité numérique. Certifié CIPM, CIPP/E. Ancien consultant pour la Commission de l'UEMOA.</p>
+                            <div class="member-social">
+                                <a href="https://linkedin.com/in/kodjo-mensah" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com/kodjomensah" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:kodjo.mensah@datasecur.tg"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member animate-on-scroll">
+                        <div class="member-image">
+                            <img src="photo.jpg" alt="Ama Adjo">
+                        </div>
+                        <div class="member-info">
+                            <h3>Shalom-Kevin D'Almeida</h3>
+                            <div class="member-position">Responsable Cybersécurité</div>
+                            <p class="member-desc">Expert en sécurité des systèmes d'information. Certifiée CISSP, CEH. 12 ans d'expérience dans le secteur bancaire.</p>
+                            <div class="member-social">
+                                <a href="https://linkedin.com/in/ama-adjo" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com/amaadjo" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:ama.adjo@datasecur.tg"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member animate-on-scroll">
+                        <div class="member-image">
+                            <img src="photo6.jpg" alt="Komlan Agbeko">
+                        </div>
+                        <div class="member-info">
+                            <h3>Anna Agbeko</h3>
+                            <div class="member-position">Consultant Juridique</div>
+                            <p class="member-desc">Spécialiste en droit du numérique et protection des données. Doctorat en droit numérique de l'Université de Paris-Dauphine.</p>
+                            <div class="member-social">
+                                <a href="https://linkedin.com/in/komlan-agbeko" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com/komlanagbeko" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="mailto:komlan.agbeko@datasecur.tg"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+        
+
+        <!-- Partners Section -->
+        <section class="partners" id="partners">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nos <span>Partenaires Institutionnels</span></h2>
+                    <p class="section-subtitle">Nous collaborons avec les principales institutions de protection des données pour promouvoir un environnement numérique sûr au Togo et en Afrique.</p>
+                </div>
+                
+                <div class="partners-grid">
+                    <div class="partner-card animate-on-scroll">
+                        <div class="partner-header">
+                            <div class="acronym">IPDCP-TOGO</div>
+                            <div class="full-name">Instance de Protection des Données à Caractère Personnel - Togo</div>
+                        </div>
+                        <div class="partner-content">
+                            <h4>Autorité de protection des données</h4>
+                            <p>L'IPDCP-Togo est l'autorité administrative indépendante chargée de veiller à la protection des données à caractère personnel sur le territoire togolais, en application de la loi n°2019-014 relative à la protection des données à caractère personnel.</p>
+                            
+                            <div class="partner-mission">
+                                <h5><i class="fas fa-bullseye"></i> Mission principale</h5>
+                                <p>Promouvoir un environnement numérique respectueux des droits fondamentaux et diffuser la culture de la protection des données au Togo et au-delà, en veillant à l'application de la réglementation en matière de protection des données personnelles.</p>
+                            </div>
+                            
+                            <h4 style="margin-top: 30px;">Domaines de collaboration avec Datasecur Consulting</h4>
+                            <ul style="list-style-type: none; margin-top: 15px;">
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Formation et sensibilisation des entreprises togolaises</li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Accompagnement à la mise en conformité</li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Organisation d'événements de promotion de la culture RGPD</li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Veille réglementaire et adaptation des pratiques</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="partner-card animate-on-scroll">
+                        <div class="partner-header">
+                            <div class="acronym">FIPDCP-TOGO</div>
+                            <div class="full-name">Forum International sur la Protection des Données à Caractère Personnel - Togo</div>
+                        </div>
+                        <div class="partner-content">
+                            <h4>Plateforme d'échanges internationaux</h4>
+                            <p>Le FIPDCP-TOGO est une initiative majeure visant à créer un espace de dialogue et d'échanges entre les acteurs de la protection des données en Afrique et dans le monde, favorisant le partage de bonnes pratiques et l'harmonisation des approches.</p>
+                            
+                            <div class="partner-mission">
+                                <h5><i class="fas fa-handshake"></i> Mission principale</h5>
+                                <p>Créer un cadre de réflexion et d'échanges entre les autorités de protection des données, les experts, les entreprises et la société civile pour promouvoir une culture commune de protection des données en Afrique.</p>
+                            </div>
+                            
+                            <h4 style="margin-top: 30px;">Domaines de collaboration avec Datasecur Consulting</h4>
+                            <ul style="list-style-type: none; margin-top: 15px;">
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Co-organisation du Forum International annuel</li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Participation aux groupes de travail thématiques</li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Élaboration de guides pratiques et de bonnes pratiques</li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Networking avec des experts internationaux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events" id="events">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Événements & <span>Webinaires</span></h2>
+                    <p class="section-subtitle">Participez à nos événements pour rester informé des dernières évolutions en matière de conformité et sécurité numérique.</p>
+                </div>
+                
+                <div class="events-grid">
+                    <div class="event-card animate-on-scroll">
+                        <div class="event-date">
+                            <div class="event-day">15</div>
+                            <div class="event-month">JUIN 2023</div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Webinaire : RGPD pour les PME togolaises</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-clock"></i> 14h - 16h</span>
+                                <span><i class="fas fa-video"></i> En ligne</span>
+                            </div>
+                            <p>Découvrez comment mettre en place une conformité RGPD efficace dans votre PME avec des outils adaptés au contexte togolais.</p>
+                            <div class="event-actions">
+                                <a href="#" class="btn btn-primary btn-center register-btn" data-event="1">S'inscrire</a>
+                                <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="1">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card animate-on-scroll">
+                        <div class="event-date">
+                            <div class="event-day">28</div>
+                            <div class="event-month">JUIN 2023</div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Atelier pratique : Audit de sécurité</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-clock"></i> 9h - 17h</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Lomé, Hôtel Sarakawa</span>
+                            </div>
+                            <p>Formation pratique pour réaliser un audit de sécurité de vos systèmes d'information. Cas pratiques et outils concrets.</p>
+                            <div class="event-actions">
+                                <a href="#" class="btn btn-primary btn-center register-btn" data-event="2">S'inscrire</a>
+                                <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="2">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card animate-on-scroll">
+                        <div class="event-date">
+                            <div class="event-day">05</div>
+                            <div class="event-month">JUILLET 2023</div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Forum IPDCP : Protection des données en Afrique</h3>
+                            <div class="event-meta">
+                                <span><i class="fas fa-clock"></i> 8h30 - 18h</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Lomé, Palais des Congrès</span>
+                            </div>
+                            <p>Événement majeur co-organisé avec l'IPDCP-TOGO. Tables rondes, ateliers et networking avec des experts internationaux.</p>
+                            <div class="event-actions">
+                                <a href="#" class="btn btn-primary btn-center register-btn" data-event="3">S'inscrire</a>
+                                <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="3">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="events-btn-container animate-on-scroll">
+                    <a href="#" class="btn btn-secondary" id="viewAllEvents">Voir tous les événements</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contactez-<span>Nous</span></h2>
+                    <p class="section-subtitle">Prenez contact avec notre équipe d'experts pour évaluer vos besoins en conformité et sécurité numérique.</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info animate-on-scroll">
+                        <h3>Parlons de votre projet</h3>
+                        <p>Notre équipe est à votre disposition pour répondre à vos questions et vous accompagner dans votre démarche de conformité.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Adresse</h4>
+                                    <p>Rue du Commerce, Immeuble Datasecur<br>Lomé, Togo</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h4>Téléphone</h4>
+                                    <p>+228 22 21 20 19</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>contact@datasecur-consulting.tg</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Horaires d'ouverture</h4>
+                                    <p>Lundi - Vendredi : 8h00 - 18h00<br>Samedi : 9h00 - 13h00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form animate-on-scroll">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nom complet *</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Adresse email *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Entreprise / Organisation</label>
+                                <input type="text" id="company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service intéressé</label>
+                                <select id="service">
+                                    <option value="">Sélectionnez un service</option>
+                                    <option value="audit">Audit de conformité RGPD</option>
+                                    <option value="security">Sécurisation des systèmes</option>
+                                    <option value="training">Formation & Sensibilisation</option>
+                                    <option value="certification">Accompagnement à la certification</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" required placeholder="Décrivez votre besoin ou posez votre question..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-center">Envoyer le message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>Datasecur<span>Consulting</span></h3>
+                        <p>Votre conformité, notre engagement</p>
+                        <p>Expert en mise en conformité RGPD et sécurisation durable des activités numériques au Togo et en Afrique de l'Ouest.</p>
+                        
+                        <div class="social-links">
+                            <a href="https://linkedin.com/company/datasecur-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/datasecurtg" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://facebook.com/datasecurconsulting" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/datasecurconsulting" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4>Liens rapides</h4>
+                        <ul>
+                            <li><a href="#home"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                            <li><a href="#about"><i class="fas fa-chevron-right"></i> À propos</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="#team"><i class="fas fa-chevron-right"></i> Notre équipe</a></li>
+                            <li><a href="#partners"><i class="fas fa-chevron-right"></i> Partenaires institutionnels</a></li>
+                            <li><a href="#events"><i class="fas fa-chevron-right"></i> Événements</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Rue du Commerce, Immeuble Datasecur, Lomé, Togo</p>
+                        <p><i class="fas fa-phone"></i> +228 22 21 20 19</p>
+                        <p><i class="fas fa-envelope"></i> contact@datasecur-consulting.tg</p>
+                        <p><i class="fas fa-clock"></i> Lundi - Vendredi : 8h00 - 18h00</p>
+                    </div>
+                    
+                    <div class="footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités sur la conformité RGPD et la sécurité numérique.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Votre adresse email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 Datasecur Consulting. Tous droits réservés. | Partenaire officiel de l'IPDCP-TOGO et du FIPDCP-TOGO | Site conçu avec <i class="fas fa-heart" style="color: #ff6b6b;"></i> à Lomé</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Events Page -->
+    <div class="events-page" id="eventsPage">
+        <div class="events-hero">
+            <div class="container">
+                <h1>Événements & Webinaires</h1>
+                <p>Découvrez tous nos événements, ateliers et webinaires sur la conformité RGPD et la sécurité numérique au Togo et en Afrique.</p>
+                <a href="#" class="btn btn-white" id="backToHome">Retour à l'accueil</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="events-filter">
+                <button class="filter-btn active" data-filter="all">Tous les événements</button>
+                <button class="filter-btn" data-filter="webinaire">Webinaires</button>
+                <button class="filter-btn" data-filter="atelier">Ateliers</button>
+                <button class="filter-btn" data-filter="forum">Forums</button>
+                <button class="filter-btn" data-filter="formation">Formations</button>
+                <button class="filter-btn" data-filter="passe">Événements passés</button>
+            </div>
+            
+            <div class="events-page-grid">
+                <div class="event-card" data-category="webinaire">
+                    <div class="event-date">
+                        <div class="event-day">15</div>
+                        <div class="event-month">JUIN 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>RGPD pour les PME togolaises : Par où commencer ?</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 14h - 16h</span>
+                            <span><i class="fas fa-video"></i> En ligne</span>
+                            <span><i class="fas fa-user"></i> Kodjo Mensah</span>
+                        </div>
+                        <p>Webinaire gratuit pour les PME togolaises souhaitant comprendre les bases du RGPD et les premières étapes vers la conformité.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="1">S'inscrire gratuitement</a>
+                            <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="1">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="atelier">
+                    <div class="event-date">
+                        <div class="event-day">28</div>
+                        <div class="event-month">JUIN 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Atelier pratique : Réaliser un audit de sécurité</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 9h - 17h</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lomé, Hôtel Sarakawa</span>
+                            <span><i class="fas fa-user"></i> Ama Adjo</span>
+                        </div>
+                        <p>Formation intensive d'une journée pour apprendre à réaliser un audit de sécurité de vos systèmes d'information. Cas pratiques et outils concrets.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="2">S'inscrire (50 000 FCFA)</a>
+                            <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="2">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="forum">
+                    <div class="event-date">
+                        <div class="event-day">05</div>
+                        <div class="event-month">JUILLET 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Forum IPDCP : L'avenir de la protection des données en Afrique</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 8h30 - 18h</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lomé, Palais des Congrès</span>
+                            <span><i class="fas fa-users"></i> Équipe Datasecur + Invités</span>
+                        </div>
+                        <p>Événement majeur co-organisé avec l'IPDCP-TOGO. Tables rondes, ateliers et networking avec des experts internationaux.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="3">S'inscrire (Gratuit)</a>
+                            <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="3">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="formation">
+                    <div class="event-date">
+                        <div class="event-day">12</div>
+                        <div class="event-month">JUILLET 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Formation DPO (Data Protection Officer)</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 3 jours</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lomé, Centre de Formation</span>
+                            <span><i class="fas fa-user"></i> Komlan Agbeko & Séna Dossou</span>
+                        </div>
+                        <p>Formation certifiante pour devenir DPO (Data Protection Officer). Programme complet adapté au contexte togolais et africain.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary btn-center register-btn" data-event="4">S'inscrire (250 000 FCFA)</a>
+                            <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="4">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="webinaire passe">
+                    <div class="event-date">
+                        <div class="event-day">20</div>
+                        <div class="event-month">MAI 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Cybersécurité pour les institutions financières</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 10h - 12h</span>
+                            <span><i class="fas fa-video"></i> En ligne</span>
+                            <span><i class="fas fa-user"></i> Ama Adjo</span>
+                        </div>
+                        <p>Webinaire spécialisé sur les enjeux de cybersécurité pour les banques et institutions financières au Togo.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary btn-center view-event-detail" data-event="5">Voir compte-rendu</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="atelier passe">
+                    <div class="event-date">
+                        <div class="event-day">05</div>
+                        <div class="event-month">AVR 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Atelier : Mise en conformité RGPD étape par étape</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 9h - 16h</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lomé, Immeuble Datasecur</span>
+                            <span><i class="fas fa-user"></i> Kodjo Mensah</span>
+                        </div>
+                        <p>Atelier pratique pour mettre en œuvre une conformité RGPD complète dans votre organisation. Méthodologie et outils fournis.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary btn-center view-event-detail" data-event="6">Voir compte-rendu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="back-to-home">
+                <a href="#" class="btn btn-secondary" id="backToHome2">Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Detail Page -->
+    <div class="event-detail-page" id="eventDetailPage">
+        <div class="event-detail-hero">
+            <div class="container">
+                <h1 id="eventDetailTitle">RGPD pour les PME togolaises : Par où commencer ?</h1>
+                <div class="event-detail-meta">
+                    <div class="event-detail-meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span id="eventDetailDate">15 Juin 2023, 14h - 16h</span>
+                    </div>
+                    <div class="event-detail-meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="eventDetailLocation">En ligne (Webinaire)</span>
+                    </div>
+                    <div class="event-detail-meta-item">
+                        <i class="fas fa-user"></i>
+                        <span id="eventDetailSpeaker">Kodjo Mensah</span>
+                    </div>
+                    <div class="event-detail-meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span id="eventDetailPrice">Gratuit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="event-detail-content">
+                <div class="event-detail-main">
+                    <h2>À propos de cet événement</h2>
+                    <p id="eventDetailDescription">Ce webinaire gratuit est spécialement conçu pour les PME togolaises qui souhaitent comprendre les bases du RGPD et identifier les premières étapes concrètes vers la conformité. Nous aborderons les principes fondamentaux de la protection des données et les obligations spécifiques pour les entreprises au Togo.</p>
+                    
+                    <h2>Contenu détaillé</h2>
+                    <div id="eventDetailContent">
+                        <p><strong>1. Introduction au RGPD et son application au Togo</strong><br>
+                        - Principes fondamentaux de la protection des données<br>
+                        - Cadre juridique togolais et implications du RGPD<br>
+                        - Les autorités de contrôle (IPDCP-Togo, etc.)</p>
+                        
+                        <p><strong>2. Les obligations des PME</strong><br>
+                        - Registre des activités de traitement<br>
+                        - Analyse d'impact sur la protection des données (AIPD)<br>
+                        - Sécurité des données et gestion des violations</p>
+                        
+                        <p><strong>3. Étapes pratiques vers la conformité</strong><br>
+                        - Évaluation de votre niveau actuel de conformité<br>
+                        - Élaboration d'un plan d'action priorisé<br>
+                        - Outils et ressources gratuits disponibles</p>
+                        
+                        <p><strong>4. Questions/Réponses</strong><br>
+                        - Session interactive avec l'expert<br>
+                        - Cas concrets et retours d'expérience</p>
+                    </div>
+                    
+                    <h2>Ce que vous apprendrez</h2>
+                    <ul id="eventDetailLearnings">
+                        <li>Comprendre les obligations RGPD pour votre PME</li>
+                        <li>Identifier les premières actions prioritaires</li>
+                        <li>Utiliser des outils pratiques pour votre conformité</li>
+                        <li>Éviter les sanctions et renforcer la confiance de vos clients</li>
+                    </ul>
+                    
+                    <div id="eventPastContent" style="display: none;">
+                        <h2>Compte-rendu de l'événement</h2>
+                        <p>Cet événement a eu lieu le <span id="eventPastDate">15 Juin 2023</span> et a réuni <strong>85 participants</strong> venant de différentes PME togolaises.</p>
+                        
+                        <h3>Points clés abordés :</h3>
+                        <ul>
+                            <li>Présentation des principes fondamentaux du RGPD adaptés au contexte togolais</li>
+                            <li>Échanges fructueux sur les défis spécifiques des PME locales</li>
+                            <li>Partage d'outils pratiques pour démarrer la conformité</li>
+                        </ul>
+                        
+                        <h3>Témoignages des participants :</h3>
+                        <div class="participants-list">
+                            <div class="participant">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participant">
+                                <div>
+                                    <strong>Koffi Adjo</strong><br>
+                                    "Très instructif, j'ai maintenant une feuille de route claire."
+                                </div>
+                            </div>
+                            <div class="participant">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participante">
+                                <div>
+                                    <strong>Akossiwa Mensah</strong><br>
+                                    "Les exemples concrets étaient très utiles pour mon entreprise."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-detail-sidebar">
+                    <div class="event-detail-info">
+                        <h3>Informations pratiques</h3>
+                        <div class="event-detail-info-item">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <strong>Date et heure</strong><br>
+                                <span id="sidebarDate">15 Juin 2023<br>14h00 - 16h00</span>
+                            </div>
+                        </div>
+                        <div class="event-detail-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Lieu</strong><br>
+                                <span id="sidebarLocation">En ligne (lien envoyé après inscription)</span>
+                            </div>
+                        </div>
+                        <div class="event-detail-info-item">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <strong>Animateur</strong><br>
+                                <span id="sidebarSpeaker">Kodjo Mensah</span>
+                            </div>
+                        </div>
+                        <div class="event-detail-info-item">
+                            <i class="fas fa-tag"></i>
+                            <div>
+                                <strong>Tarif</strong><br>
+                                <span id="sidebarPrice">Gratuit</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-actions" style="margin-top: 30px;">
+                        <a href="#" class="btn btn-primary btn-center" id="registerForEvent">S'inscrire à cet événement</a>
+                        <a href="#" class="btn btn-secondary btn-center" id="backToEvents">Retour aux événements</a>
+                    </div>
+                    
+                    <div class="event-participants" id="eventParticipants" style="display: none;">
+                        <h3>Participants (42)</h3>
+                        <div class="participants-list">
+                            <div class="participant">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participant">
+                                <div>Koffi Adjo</div>
+                            </div>
+                            <div class="participant">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participante">
+                                <div>Akossiwa Mensah</div>
+                            </div>
+                            <div class="participant">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Participant">
+                                <div>Komlan Agbeko</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Page -->
+    <div class="registration-page" id="registrationPage">
+        <div class="registration-hero">
+            <div class="container">
+                <h1 id="registrationTitle">Inscription à l'événement</h1>
+                <p>Complétez le formulaire ci-dessous pour vous inscrire à cet événement.</p>
+                <a href="#" class="btn btn-white" id="backToEventDetail">Retour aux détails</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="registration-content">
+                <div class="registration-form-container">
+                    <h2>Formulaire d'inscription</h2>
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="regName">Nom complet *</label>
+                            <input type="text" id="regName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regEmail">Adresse email *</label>
+                            <input type="email" id="regEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regPhone">Numéro de téléphone *</label>
+                            <input type="tel" id="regPhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regCompany">Entreprise / Organisation</label>
+                            <input type="text" id="regCompany">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regPosition">Poste / Fonction</label>
+                            <input type="text" id="regPosition">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regParticipants">Nombre de participants</label>
+                            <select id="regParticipants">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regComments">Commentaires / Questions</label>
+                            <textarea id="regComments" placeholder="Avez-vous des questions spécifiques ou des besoins particuliers ?"></textarea>
+                        </div>
+                        
+                        <div class="payment-methods" id="paymentSection" style="display: none;">
+                            <h4>Méthode de paiement</h4>
+                            <div class="payment-options">
+                                <div class="payment-option" data-payment="mobile-money">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>Mobile Money</div>
+                                </div>
+                                <div class="payment-option" data-payment="carte">
+                                    <i class="fas fa-credit-card"></i>
+                                    <div>Carte bancaire</div>
+                                </div>
+                                <div class="payment-option" data-payment="virement">
+                                    <i class="fas fa-university"></i>
+                                    <div>Virement bancaire</div>
+                                </div>
+                                <div class="payment-option" data-payment="especes">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <div>Espèces</div>
+                                </div>
+                            </div>
+                            
+                            <div id="mobileMoneyDetails" style="display: none; margin-top: 20px;">
+                                <div class="form-group">
+                                    <label>Numéro Mobile Money</label>
+                                    <input type="tel" placeholder="+228 XX XX XX XX">
+                                </div>
+                                <div class="form-group">
+                                    <label>Opérateur</label>
+                                    <select>
+                                        <option>FlOoz</option>
+                                        <option>T-Money</option>
+                                    </select>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--accent-teal);">
+                                    <i class="fas fa-info-circle"></i> Vous recevrez un message de paiement après soumission du formulaire.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-center" style="margin-top: 30px;">Finaliser l'inscription</button>
+                    </form>
+                </div>
+                
+                <div class="registration-summary">
+                    <h3>Résumé de l'inscription</h3>
+                    <div class="registration-summary-item">
+                        <span>Événement :</span>
+                        <span id="summaryEvent">RGPD pour les PME togolaises</span>
+                    </div>
+                    <div class="registration-summary-item">
+                        <span>Date :</span>
+                        <span id="summaryDate">15 Juin 2023, 14h-16h</span>
+                    </div>
+                    <div class="registration-summary-item">
+                        <span>Format :</span>
+                        <span id="summaryFormat">Webinaire en ligne</span>
+                    </div>
+                    <div class="registration-summary-item">
+                        <span>Animateur :</span>
+                        <span id="summarySpeaker">Kodjo Mensah</span>
+                    </div>
+                    <div class="registration-summary-item">
+                        <span>Tarif de base :</span>
+                        <span id="summaryBasePrice">0 FCFA</span>
+                    </div>
+                    <div class="registration-summary-item" id="summaryParticipantsItem" style="display: none;">
+                        <span>Participants supplémentaires :</span>
+                        <span id="summaryAdditionalPrice">0 FCFA</span>
+                    </div>
+                    
+                    <div class="registration-total">
+                        <span>Total à payer :</span>
+                        <span id="summaryTotalPrice">0 FCFA</span>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 168, 168, 0.1); border-radius: var(--border-radius);">
+                        <h4 style="color: var(--accent-teal); margin-bottom: 10px;"><i class="fas fa-info-circle"></i> Important</h4>
+                        <p style="font-size: 0.9rem;">Une confirmation d'inscription vous sera envoyée par email dans les 24 heures. Pour les événements payants, votre place sera confirmée après réception du paiement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('pageTransition').classList.add('hidden');
+            }, 800);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message! Notre équipe vous contactera dans les plus brefs délais.');
+            this.reset();
+        });
+        
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert(`Merci pour votre inscription à notre newsletter! Un email de confirmation a été envoyé à ${email}.`);
+            this.reset();
+        });
+        
+        // Event data
+        const events = {
+            1: {
+                title: "RGPD pour les PME togolaises : Par où commencer ?",
+                date: "15 Juin 2023, 14h - 16h",
+                location: "En ligne (Webinaire)",
+                speaker: "Kodjo Mensah",
+                price: "Gratuit",
+                description: "Webinaire gratuit pour les PME togolaises souhaitant comprendre les bases du RGPD et les premières étapes vers la conformité.",
+                category: "webinaire",
+                past: false
+            },
+            2: {
+                title: "Atelier pratique : Réaliser un audit de sécurité",
+                date: "28 Juin 2023, 9h - 17h",
+                location: "Lomé, Hôtel Sarakawa",
+                speaker: "Ama Adjo",
+                price: "50 000 FCFA",
+                description: "Formation intensive d'une journée pour apprendre à réaliser un audit de sécurité de vos systèmes d'information.",
+                category: "atelier",
+                past: false
+            },
+            3: {
+                title: "Forum IPDCP : L'avenir de la protection des données en Afrique",
+                date: "05 Juillet 2023, 8h30 - 18h",
+                location: "Lomé, Palais des Congrès",
+                speaker: "Équipe Datasecur + Invités",
+                price: "Gratuit",
+                description: "Événement majeur co-organisé avec l'IPDCP-TOGO. Tables rondes, ateliers et networking avec des experts internationaux.",
+                category: "forum",
+                past: false
+            },
+            4: {
+                title: "Formation DPO (Data Protection Officer)",
+                date: "12-14 Juillet 2023, 9h-17h",
+                location: "Lomé, Centre de Formation",
+                speaker: "Komlan Agbeko & Séna Dossou",
+                price: "250 000 FCFA",
+                description: "Formation certifiante pour devenir DPO (Data Protection Officer). Programme complet adapté au contexte togolais et africain.",
+                category: "formation",
+                past: false
+            },
+            5: {
+                title: "Cybersécurité pour les institutions financières",
+                date: "20 Mai 2023, 10h - 12h",
+                location: "En ligne (Webinaire)",
+                speaker: "Ama Adjo",
+                price: "Gratuit",
+                description: "Webinaire spécialisé sur les enjeux de cybersécurité pour les banques et institutions financières au Togo.",
+                category: "webinaire passe",
+                past: true
+            },
+            6: {
+                title: "Atelier : Mise en conformité RGPD étape par étape",
+                date: "05 Avril 2023, 9h - 16h",
+                location: "Lomé, Immeuble Datasecur",
+                speaker: "Kodjo Mensah",
+                price: "75 000 FCFA",
+                description: "Atelier pratique pour mettre en œuvre une conformité RGPD complète dans votre organisation. Méthodologie et outils fournis.",
+                category: "atelier passe",
+                past: true
+            }
+        };
+        
+        // View event detail
+        document.querySelectorAll('.view-event-detail').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const eventId = this.getAttribute('data-event');
+                showEventDetail(eventId);
+            });
+        });
+        
+        // Register button handlers (both on main page and events page)
+        document.querySelectorAll('.register-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const eventId = this.getAttribute('data-event');
+                showRegistrationPage(eventId);
+            });
+        });
+        
+        function showEventDetail(eventId) {
+            const event = events[eventId];
+            if (!event) return;
+            
+            // Show page transition
+            document.getElementById('pageTransition').classList.remove('hidden');
+            
+            setTimeout(() => {
+                // Hide all pages
+                document.getElementById('mainPage').style.display = 'none';
+                document.getElementById('eventsPage').classList.remove('active');
+                document.getElementById('eventDetailPage').classList.remove('active');
+                document.getElementById('registrationPage').classList.remove('active');
+                
+                // Update event detail page
+                document.getElementById('eventDetailTitle').textContent = event.title;
+                document.getElementById('eventDetailDate').textContent = event.date;
+                document.getElementById('eventDetailLocation').textContent = event.location;
+                document.getElementById('eventDetailSpeaker').textContent = event.speaker;
+                document.getElementById('eventDetailPrice').textContent = event.price;
+                document.getElementById('eventDetailDescription').textContent = event.description;
+                
+                document.getElementById('sidebarDate').textContent = event.date;
+                document.getElementById('sidebarLocation').textContent = event.location;
+                document.getElementById('sidebarSpeaker').textContent = event.speaker;
+                document.getElementById('sidebarPrice').textContent = event.price;
+                
+                // Show/hide past event content
+                const pastContent = document.getElementById('eventPastContent');
+                const participantsSection = document.getElementById('eventParticipants');
+                const registerButton = document.getElementById('registerForEvent');
+                
+                if (event.past) {
+                    pastContent.style.display = 'block';
+                    participantsSection.style.display = 'block';
+                    registerButton.style.display = 'none';
+                    document.getElementById('eventPastDate').textContent = event.date.split(',')[0];
+                } else {
+                    pastContent.style.display = 'none';
+                    participantsSection.style.display = 'none';
+                    registerButton.style.display = 'block';
+                }
+                
+                // Store current event ID for registration
+                document.getElementById('eventDetailPage').setAttribute('data-current-event', eventId);
+                
+                // Show event detail page
+                document.getElementById('eventDetailPage').classList.add('active');
+                
+                // Hide page transition
+                document.getElementById('pageTransition').classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }, 500);
+        }
+        
+        // Register for event from detail page
+        document.getElementById('registerForEvent').addEventListener('click', function(e) {
+            e.preventDefault();
+            const eventId = document.getElementById('eventDetailPage').getAttribute('data-current-event');
+            showRegistrationPage(eventId);
+        });
+        
+        function showRegistrationPage(eventId) {
+            const event = events[eventId];
+            if (!event) return;
+            
+            // Show page transition
+            document.getElementById('pageTransition').classList.remove('hidden');
+            
+            setTimeout(() => {
+                // Hide all pages
+                document.getElementById('mainPage').style.display = 'none';
+                document.getElementById('eventsPage').classList.remove('active');
+                document.getElementById('eventDetailPage').classList.remove('active');
+                document.getElementById('registrationPage').classList.remove('active');
+                
+                // Update registration page
+                document.getElementById('registrationTitle').textContent = `Inscription : ${event.title}`;
+                document.getElementById('summaryEvent').textContent = event.title;
+                document.getElementById('summaryDate').textContent = event.date;
+                document.getElementById('summaryFormat').textContent = event.location.includes('En ligne') ? 'Webinaire en ligne' : 'Présentiel';
+                document.getElementById('summarySpeaker').textContent = event.speaker;
+                
+                // Parse price
+                let basePrice = 0;
+                if (event.price.includes('FCFA')) {
+                    basePrice = parseInt(event.price.replace(/[^0-9]/g, ''));
+                }
+                
+                document.getElementById('summaryBasePrice').textContent = basePrice === 0 ? '0 FCFA' : `${basePrice.toLocaleString()} FCFA`;
+                document.getElementById('summaryTotalPrice').textContent = basePrice === 0 ? '0 FCFA' : `${basePrice.toLocaleString()} FCFA`;
+                
+                // Show/hide payment section
+                const paymentSection = document.getElementById('paymentSection');
+                if (basePrice > 0) {
+                    paymentSection.style.display = 'block';
+                } else {
+                    paymentSection.style.display = 'none';
+                }
+                
+                // Store current event ID
+                document.getElementById('registrationPage').setAttribute('data-current-event', eventId);
+                
+                // Show registration page
+                document.getElementById('registrationPage').classList.add('active');
+                
+                // Hide page transition
+                document.getElementById('pageTransition').classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }, 500);
+        }
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animated');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Smooth scrolling for anchor links on main page
+        document.querySelectorAll('#mainPage a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId === '#!') return;
+                
+                e.preventDefault();
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Page navigation
+        const viewEventsButtons = document.querySelectorAll('#viewEventsPage, #viewAllEvents');
+        const backToHomeButtons = document.querySelectorAll('#backToHome, #backToHome2');
+        const backToEventsButtons = document.querySelectorAll('#backToEvents, #backToEventDetail');
+        const mainPage = document.getElementById('mainPage');
+        const eventsPage = document.getElementById('eventsPage');
+        const eventDetailPage = document.getElementById('eventDetailPage');
+        const registrationPage = document.getElementById('registrationPage');
+        
+        viewEventsButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Show page transition
+                document.getElementById('pageTransition').classList.remove('hidden');
+                
+                setTimeout(() => {
+                    // Hide all pages, show events page
+                    mainPage.style.display = 'none';
+                    eventsPage.classList.add('active');
+                    eventDetailPage.classList.remove('active');
+                    registrationPage.classList.remove('active');
+                    
+                    // Hide page transition
+                    document.getElementById('pageTransition').classList.add('hidden');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                }, 500);
+            });
+        });
+        
+        backToHomeButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Show page transition
+                document.getElementById('pageTransition').classList.remove('hidden');
+                
+                setTimeout(() => {
+                    // Hide all pages, show main page
+                    eventsPage.classList.remove('active');
+                    eventDetailPage.classList.remove('active');
+                    registrationPage.classList.remove('active');
+                    mainPage.style.display = 'block';
+                    
+                    // Hide page transition
+                    document.getElementById('pageTransition').classList.add('hidden');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                }, 500);
+            });
+        });
+        
+        backToEventsButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Show page transition
+                document.getElementById('pageTransition').classList.remove('hidden');
+                
+                setTimeout(() => {
+                    // Hide current page, show events page
+                    eventDetailPage.classList.remove('active');
+                    registrationPage.classList.remove('active');
+                    eventsPage.classList.add('active');
+                    
+                    // Hide page transition
+                    document.getElementById('pageTransition').classList.add('hidden');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                }, 500);
+            });
+        });
+        
+        // Events filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const eventCards = document.querySelectorAll('.events-page-grid .event-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Filter event cards
+                eventCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || 
+                        category === filterValue || 
+                        (filterValue === 'passe' && category.includes('passe')) ||
+                        (filterValue !== 'passe' && !category.includes('passe') && category === filterValue)) {
+                        
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 400);
+                    }
+                });
+            });
+        });
+        
+        // Payment option selection
+        document.querySelectorAll('.payment-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                document.querySelectorAll('.payment-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Show/hide payment details
+                const paymentType = this.getAttribute('data-payment');
+                const mobileMoneyDetails = document.getElementById('mobileMoneyDetails');
+                
+                if (paymentType === 'mobile-money') {
+                    mobileMoneyDetails.style.display = 'block';
+                } else {
+                    mobileMoneyDetails.style.display = 'none';
+                }
+            });
+        });
+        
+        // Registration form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get event details
+            const eventId = document.getElementById('registrationPage').getAttribute('data-current-event');
+            const event = events[eventId];
+            
+            // Check if payment method is selected for paid events
+            let paymentMethod = null;
+            if (event.price !== 'Gratuit') {
+                const selectedPayment = document.querySelector('.payment-option.selected');
+                if (!selectedPayment) {
+                    alert('Veuillez sélectionner une méthode de paiement.');
+                    return;
+                }
+                paymentMethod = selectedPayment.getAttribute('data-payment');
+            }
+            
+            // Show success message
+            alert(`Merci pour votre inscription à "${event.title}"! Vous recevrez une confirmation par email dans les 24 heures.${event.price !== 'Gratuit' ? ` Veuillez effectuer le paiement via ${paymentMethod}.` : ''}`);
+            
+            // Reset form and go back to events page
+            this.reset();
+            document.querySelector('.payment-option.selected')?.classList.remove('selected');
+            document.getElementById('mobileMoneyDetails').style.display = 'none';
+            
+            // Show page transition
+            document.getElementById('pageTransition').classList.remove('hidden');
+            
+            setTimeout(() => {
+                // Hide registration page, show events page
+                registrationPage.classList.remove('active');
+                eventsPage.classList.add('active');
+                
+                // Hide page transition
+                document.getElementById('pageTransition').classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }, 500);
+        });
+        
+        // Update total price when participants change
+        document.getElementById('regParticipants').addEventListener('change', function() {
+            const eventId = document.getElementById('registrationPage').getAttribute('data-current-event');
+            const event = events[eventId];
+            
+            // Parse base price
+            let basePrice = 0;
+            if (event.price.includes('FCFA')) {
+                basePrice = parseInt(event.price.replace(/[^0-9]/g, ''));
+            }
+            
+            const participants = parseInt(this.value);
+            
+            if (participants > 1 && basePrice > 0) {
+                // Calculate total (first participant at full price, others at 20% discount)
+                const additionalParticipants = participants - 1;
+                const discountPrice = Math.round(basePrice * 0.8);
+                const total = basePrice + (additionalParticipants * discountPrice);
+                
+                document.getElementById('summaryParticipantsItem').style.display = 'flex';
+                document.getElementById('summaryAdditionalPrice').textContent = `${(additionalParticipants * discountPrice).toLocaleString()} FCFA`;
+                document.getElementById('summaryTotalPrice').textContent = `${total.toLocaleString()} FCFA`;
+            } else {
+                document.getElementById('summaryParticipantsItem').style.display = 'none';
+                document.getElementById('summaryTotalPrice').textContent = basePrice === 0 ? '0 FCFA' : `${basePrice.toLocaleString()} FCFA`;
+            }
+        });
+    </script>
+</body>
+</html>
