@@ -1268,7 +1268,8 @@
 
         .footer-links h4,
         .footer-contact h4,
-        .footer-newsletter h4 {
+        .footer-newsletter h4,
+        .footer-info h4 {
             font-size: 1.2rem;
             margin-bottom: 20px;
             color: white;
@@ -1278,7 +1279,8 @@
 
         .footer-links h4::after,
         .footer-contact h4::after,
-        .footer-newsletter h4::after {
+        .footer-newsletter h4::after,
+        .footer-info h4::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -1395,6 +1397,313 @@
             opacity: 0.7;
             font-size: 0.85rem;
             padding: 0 15px;
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9998;
+            display: none;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .cookie-consent.active {
+            display: block;
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 0 15px;
+        }
+
+        .cookie-text {
+            flex: 1;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .cookie-text a {
+            color: var(--accent-teal);
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cookie-btn {
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .cookie-btn-accept {
+            background-color: var(--accent-teal);
+            color: white;
+        }
+
+        .cookie-btn-settings {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cookie-btn-accept:hover {
+            background-color: var(--accent-green);
+        }
+
+        .cookie-btn-settings:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Cookie Settings Modal */
+        .cookie-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cookie-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-dark);
+        }
+
+        .modal-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .cookie-category {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--neutral-light);
+        }
+
+        .cookie-category:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .category-header h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--neutral-gray);
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--accent-teal);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
+
+        .category-description {
+            font-size: 0.9rem;
+            color: var(--neutral-gray);
+            margin-bottom: 15px;
+        }
+
+        .cookie-list {
+            background-color: var(--neutral-light);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+            font-size: 0.85rem;
+        }
+
+        .modal-footer {
+            padding: 20px;
+            background-color: var(--neutral-light);
+            border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Legal Pages */
+        .legal-page {
+            display: none;
+            padding-top: 140px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .legal-page.active {
+            display: block;
+        }
+
+        .legal-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .legal-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            padding: 0 15px;
+        }
+
+        .legal-hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            padding: 0 15px;
+        }
+
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .legal-section {
+            margin-bottom: 40px;
+        }
+
+        .legal-section h2 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-teal);
+        }
+
+        .legal-section h3 {
+            color: var(--primary-dark);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .legal-section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .legal-section ul, .legal-section ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .legal-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .back-to-home-legal {
+            text-align: center;
+            margin-top: 50px;
         }
 
         /* Animations */
@@ -1514,6 +1823,15 @@
             .newsletter-form button {
                 border-radius: 0 var(--border-radius) var(--border-radius) 0;
             }
+            
+            .cookie-content {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .cookie-text {
+                text-align: left;
+            }
         }
 
         @media (min-width: 768px) {
@@ -1576,7 +1894,7 @@
             }
             
             .footer-content {
-                grid-template-columns: 2fr 1fr 1fr 2fr;
+                grid-template-columns: 2fr 1fr 1fr 1.5fr;
             }
         }
 
@@ -1641,10 +1959,14 @@
                 bottom: 0;
                 width: 40%;
                 height: 100%;
-                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org2000/svg" width="500" height="500" viewBox="0 0 500 500"><circle cx="250" cy="250" r="200" fill="%2300A8A8" opacity="0.08"/><rect x="100" y="100" width="300" height="300" fill="none" stroke="white" stroke-width="2" opacity="0.15" rx="20"/><path d="M50,450 L450,50" stroke="white" stroke-width="2" opacity="0.15"/><path d="M100,400 L400,100" stroke="white" stroke-width="2" opacity="0.15"/></svg>');
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500"><circle cx="250" cy="250" r="200" fill="%2300A8A8" opacity="0.08"/><rect x="100" y="100" width="300" height="300" fill="none" stroke="white" stroke-width="2" opacity="0.15" rx="20"/><path d="M50,450 L450,50" stroke="white" stroke-width="2" opacity="0.15"/><path d="M100,400 L400,100" stroke="white" stroke-width="2" opacity="0.15"/></svg>');
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center right;
+            }
+            
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
             }
         }
 
@@ -1719,6 +2041,14 @@
             .team-member {
                 max-width: 100%;
             }
+            
+            .modal-footer {
+                flex-direction: column;
+            }
+            
+            .modal-footer .btn {
+                width: 100%;
+            }
         }
 
         @media (min-width: 768px) and (max-width: 991px) {
@@ -1729,6 +2059,10 @@
             
             .team-member {
                 max-width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
             }
         }
 
@@ -1769,6 +2103,15 @@
                 padding: 12px 24px;
                 font-size: 0.95rem;
             }
+            
+            .cookie-buttons {
+                width: 100%;
+            }
+            
+            .cookie-btn {
+                flex: 1;
+                min-width: 120px;
+            }
         }
 
         /* Améliorations spécifiques pour centrage et cadrage */
@@ -1805,6 +2148,83 @@
     <div class="page-transition" id="pageTransition">
         <div class="loader"></div>
         <div class="loader-motto">Votre conformité, notre engagement</div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. Certains cookies sont nécessaires au fonctionnement du site, tandis que d'autres nous aident à analyser l'utilisation du site. En continuant à naviguer, vous acceptez notre <a href="#" id="showCookiePolicy">Politique de cookies</a>.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-settings" id="cookieSettings">Gérer les cookies</button>
+                <button class="cookie-btn cookie-btn-accept" id="acceptAllCookies">Tout accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div class="cookie-modal" id="cookieModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Préférences des cookies</h3>
+                <button class="modal-close" id="closeCookieModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>En tant que cabinet spécialisé en conformité RGPD, nous nous engageons à respecter votre vie privée. Vous pouvez configurer vos préférences de cookies ci-dessous.</p>
+                
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <h4>Cookies essentiels</h4>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="essentialCookies" checked disabled>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p class="category-description">Ces cookies sont nécessaires au fonctionnement du site et ne peuvent pas être désactivés. Ils sont généralement définis en réponse à des actions que vous effectuez, comme la connexion à votre compte ou la définition de vos préférences de confidentialité.</p>
+                </div>
+                
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <h4>Cookies analytiques</h4>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="analyticsCookies">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p class="category-description">Ces cookies nous permettent de comprendre comment les visiteurs interagissent avec notre site. Ils nous aident à améliorer l'expérience utilisateur en collectant des informations anonymes sur les pages visitées et les interactions.</p>
+                    <div class="cookie-list">
+                        <strong>Cookies utilisés :</strong>
+                        <ul>
+                            <li><strong>_ga</strong> : Google Analytics - Suivi des utilisateurs (durée : 2 ans)</li>
+                            <li><strong>_gid</strong> : Google Analytics - Identification de session (durée : 24h)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <h4>Cookies de préférences</h4>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="preferenceCookies">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p class="category-description">Ces cookies permettent au site de se souvenir des choix que vous faites (comme votre langue ou votre région) et de fournir des fonctionnalités améliorées et plus personnalisées.</p>
+                    <div class="cookie-list">
+                        <strong>Cookies utilisés :</strong>
+                        <ul>
+                            <li><strong>language</strong> : Stocke votre préférence linguistique (durée : 1 an)</li>
+                            <li><strong>consent</strong> : Stocke vos préférences de cookies (durée : 1 an)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="saveCookiePreferences">Enregistrer mes préférences</button>
+                <button class="btn btn-primary" id="acceptAllInModal">Tout accepter</button>
+            </div>
+        </div>
     </div>
 
     <!-- Main Page -->
@@ -2003,12 +2423,12 @@
                     
                     <div class="team-member animate-on-scroll">
                         <div class="member-image">
-                            <img src="photo.jpg" alt="Gaël Fabrice  d'ALMEIDA - Juriste en Protection des Données à caractères personnelles">
+                            <img src="photo.jpg" alt="Gaël Fabrice d'ALMEIDA - Juriste en Protection des Données à caractères personnelles">
                         </div>
                         <div class="member-info">
-                            <h3>Gaël Fabrice  d'ALMEIDA </h3>
+                            <h3>Gaël Fabrice d'ALMEIDA</h3>
                             <div class="member-position">Responsable Juridique</div>
-                            <p class="member-desc">Juriste en Protection des Données à caractères personnelles. </p>
+                            <p class="member-desc">Juriste en Protection des Données à caractères personnelles.</p>
                             <div class="member-social">
                                 <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -2294,6 +2714,16 @@
                         <p><i class="fas fa-phone"></i> +228 22 21 20 19</p>
                         <p><i class="fas fa-envelope"></i> contact@datasecur-consulting.tg</p>
                         <p><i class="fas fa-clock"></i> Lundi - Vendredi : 8h00 - 18h00</p>
+                    </div>
+                    
+                    <div class="footer-info">
+                        <h4>Informations légales</h4>
+                        <ul>
+                            <li><a href="#" id="showMentionsLegales"><i class="fas fa-gavel"></i> Mentions légales</a></li>
+                            <li><a href="#" id="showPrivacyPolicy"><i class="fas fa-user-shield"></i> Politique de confidentialité</a></li>
+                            <li><a href="#" id="showCookiePolicyFooter"><i class="fas fa-cookie-bite"></i> Gestion des cookies</a></li>
+                            <li><a href="#" id="showCredits"><i class="fas fa-code"></i> Crédits</a></li>
+                        </ul>
                     </div>
                     
                     <div class="footer-newsletter">
@@ -2673,17 +3103,524 @@
         </div>
     </div>
 
+    <!-- Legal Pages -->
+    <!-- Mentions Légales -->
+    <div class="legal-page" id="mentionsLegalesPage">
+        <div class="legal-hero">
+            <div class="container">
+                <h1>Mentions Légales</h1>
+                <p>Informations légales concernant Datasecur Consulting et les conditions d'utilisation de ce site.</p>
+                <a href="#" class="btn btn-white back-to-legal-home">Retour à l'accueil</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h2>1. Informations générales</h2>
+                    <p><strong>Nom de l'entreprise :</strong> Datasecur Consulting</p>
+                    <p><strong>Forme juridique :</strong> Cabinet de conseil en conformité RGPD et sécurité numérique</p>
+                    <p><strong>Siège social :</strong> Rue du Commerce, Immeuble Datasecur, Lomé, Togo</p>
+                    <p><strong>Téléphone :</strong> +228 22 21 20 19</p>
+                    <p><strong>Email :</strong> contact@datasecur-consulting.tg</p>
+                    <p><strong>Directeur de la publication :</strong> Kodjo Mensah</p>
+                    <p><strong>Hébergeur :</strong> [Nom de l'hébergeur] - [Adresse de l'hébergeur]</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>2. Objet du site</h2>
+                    <p>Le présent site a pour objet de présenter les activités de Datasecur Consulting, cabinet spécialisé dans l'accompagnement des entreprises vers la conformité RGPD et la sécurisation de leurs systèmes d'information au Togo et en Afrique de l'Ouest.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>3. Propriété intellectuelle</h2>
+                    <p>Tous les éléments du site (textes, graphismes, logos, images, vidéos, etc.) sont la propriété exclusive de Datasecur Consulting ou font l'objet d'une autorisation d'utilisation. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de Datasecur Consulting.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>4. Limitation de responsabilité</h2>
+                    <p>Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour, mais peut toutefois contenir des inexactitudes, des omissions ou des lacunes. Datasecur Consulting ne peut être tenu responsable des dommages directs et indirects causés au matériel de l'utilisateur, lors de l'accès au site, et résultant soit de l'utilisation d'un matériel ne répondant pas aux spécifications indiquées, soit de l'apparition d'un bug ou d'une incompatibilité.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>5. Liens hypertextes</h2>
+                    <p>Le site peut contenir des liens hypertextes vers d'autres sites. Datasecur Consulting n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leur accessibilité, leur fonctionnement ou leur politique de confidentialité.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>6. Droit applicable et juridiction compétente</h2>
+                    <p>Les présentes mentions légales sont régies par le droit togolais. En cas de litige, et à défaut de résolution amiable, les tribunaux de Lomé seront seuls compétents.</p>
+                </div>
+                
+                <div class="back-to-home-legal">
+                    <a href="#" class="btn btn-secondary back-to-legal-home">Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Politique de Confidentialité -->
+    <div class="legal-page" id="privacyPolicyPage">
+        <div class="legal-hero">
+            <div class="container">
+                <h1>Politique de Confidentialité</h1>
+                <p>Comment Datasecur Consulting collecte, utilise et protège vos données personnelles.</p>
+                <a href="#" class="btn btn-white back-to-legal-home">Retour à l'accueil</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h2>1. Introduction</h2>
+                    <p>Datasecur Consulting, en tant que cabinet spécialisé en conformité RGPD, s'engage à protéger la vie privée des utilisateurs de son site web. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données personnelles.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>2. Données collectées</h2>
+                    <p>Nous collectons les données suivantes :</p>
+                    <ul>
+                        <li><strong>Données de contact :</strong> Nom, prénom, adresse email, numéro de téléphone, entreprise, fonction</li>
+                        <li><strong>Données de navigation :</strong> Adresse IP, type de navigateur, pages visitées, durée de visite</li>
+                        <li><strong>Données de formulaire :</strong> Informations fournies via nos formulaires de contact et d'inscription</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>3. Finalités du traitement</h2>
+                    <p>Vos données sont collectées pour :</p>
+                    <ul>
+                        <li>Répondre à vos demandes d'information</li>
+                        <li>Gérer vos inscriptions à nos événements</li>
+                        <li>Vous envoyer notre newsletter (avec votre consentement)</li>
+                        <li>Améliorer notre site web et nos services</li>
+                        <li>Respecter nos obligations légales et réglementaires</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>4. Base légale du traitement</h2>
+                    <p>Le traitement de vos données est fondé sur :</p>
+                    <ul>
+                        <li>Votre consentement (pour la newsletter et certains cookies)</li>
+                        <li>L'exécution d'une relation contractuelle ou précontractuelle (pour répondre à vos demandes)</li>
+                        <li>Notre intérêt légitime (pour la sécurité du site et l'amélioration de nos services)</li>
+                        <li>Le respect d'obligations légales</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>5. Conservation des données</h2>
+                    <p>Vos données sont conservées :</p>
+                    <ul>
+                        <li>Pour la durée nécessaire à la réalisation des finalités poursuivies</li>
+                        <li>Conformément aux obligations légales et réglementaires</li>
+                        <li>Jusqu'à ce que vous retiriez votre consentement (pour les données traitées sur ce fondement)</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>6. Partage des données</h2>
+                    <p>Vos données ne sont pas vendues à des tiers. Elles peuvent être partagées avec :</p>
+                    <ul>
+                        <li>Nos prestataires techniques (hébergeur, outils d'analyse)</li>
+                        <li>Nos partenaires institutionnels (IPDCP-TOGO, FIPDCP-TOGO) pour les événements co-organisés</li>
+                        <li>Les autorités compétentes si la loi l'exige</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>7. Vos droits</h2>
+                    <p>Conformément au RGPD et à la loi togolaise n°2019-014, vous disposez des droits suivants :</p>
+                    <ul>
+                        <li>Droit d'accès à vos données</li>
+                        <li>Droit de rectification</li>
+                        <li>Droit à l'effacement (droit à l'oubli)</li>
+                        <li>Droit à la limitation du traitement</li>
+                        <li>Droit à la portabilité des données</li>
+                        <li>Droit d'opposition</li>
+                        <li>Droit de retirer votre consentement à tout moment</li>
+                    </ul>
+                    <p>Pour exercer vos droits, contactez-nous à : <strong>privacy@datasecur-consulting.tg</strong></p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>8. Sécurité</h2>
+                    <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, modification, divulgation ou destruction.</p>
+                </div>
+                
+                <div class="back-to-home-legal">
+                    <a href="#" class="btn btn-secondary back-to-legal-home">Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gestion des Cookies -->
+    <div class="legal-page" id="cookiePolicyPage">
+        <div class="legal-hero">
+            <div class="container">
+                <h1>Gestion des Cookies</h1>
+                <p>Informations sur les cookies utilisés sur notre site et comment les gérer.</p>
+                <a href="#" class="btn btn-white back-to-legal-home">Retour à l'accueil</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h2>1. Qu'est-ce qu'un cookie ?</h2>
+                    <p>Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, smartphone) lorsque vous visitez un site web. Les cookies sont largement utilisés pour faire fonctionner les sites ou les rendre plus efficaces, ainsi que pour fournir des informations aux propriétaires du site.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>2. Les cookies que nous utilisons</h2>
+                    
+                    <h3>Cookies essentiels</h3>
+                    <p>Ces cookies sont nécessaires au fonctionnement du site. Ils vous permettent d'utiliser les fonctionnalités principales du site et de sécuriser votre connexion.</p>
+                    
+                    <h3>Cookies analytiques</h3>
+                    <p>Ces cookies nous permettent de connaître l'utilisation et les performances du site et d'en améliorer le fonctionnement. Ils nous aident à comprendre comment les visiteurs interagissent avec le site en recueillant et en rapportant des informations de manière anonyme.</p>
+                    
+                    <h3>Cookies de préférences</h3>
+                    <p>Ces cookies permettent au site de retenir des choix que vous avez faits (telles que votre langue ou votre région) et fournissent des fonctionnalités améliorées et plus personnalisées.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>3. Durée de conservation des cookies</h2>
+                    <p>Les cookies sont conservés pour des durées variables :</p>
+                    <ul>
+                        <li><strong>Cookies de session :</strong> Supprimés à la fermeture du navigateur</li>
+                        <li><strong>Cookies persistants :</strong> Conservés pendant une durée déterminée (jusqu'à 13 mois maximum)</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>4. Gérer vos préférences</h2>
+                    <p>Lors de votre première visite sur notre site, un bandeau vous informe de l'utilisation de cookies et vous permet d'accepter ou de refuser certains cookies. Vous pouvez à tout moment modifier vos préférences en cliquant sur le lien "Gérer les cookies" dans le bandeau ou dans le footer du site.</p>
+                    
+                    <h3>Gestion via votre navigateur</h3>
+                    <p>Vous pouvez également configurer votre navigateur pour :</p>
+                    <ul>
+                        <li>Accepter ou refuser les cookies</li>
+                        <li>Vous avertir avant l'acceptation d'un cookie</li>
+                        <li>Supprimer périodiquement les cookies</li>
+                    </ul>
+                    <p>La configuration de chaque navigateur est différente. Elle est décrite dans le menu d'aide de votre navigateur, qui vous permettra de savoir de quelle manière modifier vos préférences en matière de cookies.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>5. Cookies tiers</h2>
+                    <p>Notre site peut intégrer des services tiers qui déposent leurs propres cookies. Il s'agit notamment de :</p>
+                    <ul>
+                        <li><strong>Google Analytics :</strong> Service d'analyse d'audience</li>
+                        <li><strong>Font Awesome :</strong> Service d'icônes</li>
+                        <li><strong>Google Fonts :</strong> Service de polices d'écriture</li>
+                    </ul>
+                    <p>Nous vous invitons à consulter les politiques de confidentialité de ces services pour plus d'informations sur leurs pratiques en matière de cookies.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>6. Contact</h2>
+                    <p>Pour toute question concernant notre politique de cookies, vous pouvez nous contacter à : <strong>privacy@datasecur-consulting.tg</strong></p>
+                </div>
+                
+                <div class="back-to-home-legal">
+                    <a href="#" class="btn btn-secondary back-to-legal-home">Retour à l'accueil</a>
+                    <button class="btn btn-primary" id="openCookieSettingsFromPage">Gérer mes préférences de cookies</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crédits -->
+    <div class="legal-page" id="creditsPage">
+        <div class="legal-hero">
+            <div class="container">
+                <h1>Crédits</h1>
+                <p>Remerciements et informations sur les ressources utilisées pour ce site.</p>
+                <a href="#" class="btn btn-white back-to-legal-home">Retour à l'accueil</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h2>1. Développement</h2>
+                    <p>Ce site a été conçu et développé par l'équipe technique de Datasecur Consulting avec l'expertise de nos consultants en conformité RGPD.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>2. Technologies utilisées</h2>
+                    <ul>
+                        <li><strong>HTML5, CSS3, JavaScript :</strong> Technologies de base pour le développement web</li>
+                        <li><strong>Font Awesome :</strong> Bibliothèque d'icônes - <a href="https://fontawesome.com" target="_blank">https://fontawesome.com</a></li>
+                        <li><strong>Google Fonts :</strong> Polices Montserrat et Open Sans - <a href="https://fonts.google.com" target="_blank">https://fonts.google.com</a></li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>3. Images</h2>
+                    <p>Les images utilisées sur ce site sont :</p>
+                    <ul>
+                        <li>Des photographies originales de l'équipe Datasecur Consulting</li>
+                        <li>Des illustrations vectorielles créées spécifiquement pour le site</li>
+                        <li>Des images sous licence libre pour les éléments décoratifs</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>4. Conformité</h2>
+                    <p>Ce site a été conçu en respectant :</p>
+                    <ul>
+                        <li>Le Règlement Général sur la Protection des Données (RGPD)</li>
+                        <li>La loi togolaise n°2019-014 relative à la protection des données à caractère personnel</li>
+                        <li>Les recommandations de l'IPDCP-TOGO (Instance de Protection des Données à Caractère Personnel - Togo)</li>
+                        <li>Les standards d'accessibilité web (WCAG 2.1 niveau AA)</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>5. Remerciements</h2>
+                    <p>Nous remercions particulièrement :</p>
+                    <ul>
+                        <li>L'IPDCP-TOGO pour son partenariat et son expertise</li>
+                        <li>Le FIPDCP-TOGO pour son soutien à nos initiatives</li>
+                        <li>Nos clients pour leur confiance et leurs retours</li>
+                        <li>Notre équipe pour son engagement et son professionnalisme</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>6. Droits d'auteur</h2>
+                    <p>© 2023 Datasecur Consulting. Tous droits réservés.</p>
+                    <p>Toute reproduction, même partielle, du contenu de ce site est interdite sans autorisation préalable.</p>
+                </div>
+                
+                <div class="back-to-home-legal">
+                    <a href="#" class="btn btn-secondary back-to-legal-home">Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Page Loader
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('pageTransition').classList.add('hidden');
             }, 800);
+            
+            // Check cookie consent after page loads
+            setTimeout(() => {
+                checkCookieConsent();
+            }, 1000);
         });
 
+        // Cookie Management System
+        const cookieConsent = document.getElementById('cookieConsent');
+        const cookieModal = document.getElementById('cookieModal');
+        const acceptAllCookiesBtn = document.getElementById('acceptAllCookies');
+        const cookieSettingsBtn = document.getElementById('cookieSettings');
+        const closeCookieModalBtn = document.getElementById('closeCookieModal');
+        const saveCookiePreferencesBtn = document.getElementById('saveCookiePreferences');
+        const acceptAllInModalBtn = document.getElementById('acceptAllInModal');
+        const analyticsCookiesCheckbox = document.getElementById('analyticsCookies');
+        const preferenceCookiesCheckbox = document.getElementById('preferenceCookies');
+        
+        // Check if user has already made a cookie choice
+        function checkCookieConsent() {
+            const cookieConsent = getCookie('cookie_consent');
+            
+            if (!cookieConsent) {
+                // Show cookie banner after a short delay
+                setTimeout(() => {
+                    cookieConsentBanner.classList.add('active');
+                }, 1500);
+            } else {
+                // Apply saved preferences
+                applyCookiePreferences();
+            }
+        }
+        
+        // Get cookie value by name
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        
+        // Set cookie with expiration (in days)
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+        }
+        
+        // Apply cookie preferences based on saved choices
+        function applyCookiePreferences() {
+            const cookieConsent = getCookie('cookie_consent');
+            const cookiePreferences = getCookie('cookie_preferences');
+            
+            if (cookieConsent === 'all') {
+                // All cookies accepted
+                loadAnalyticsCookies();
+                loadPreferenceCookies();
+            } else if (cookieConsent === 'custom' && cookiePreferences) {
+                // Custom preferences
+                const prefs = JSON.parse(cookiePreferences);
+                
+                if (prefs.analytics) {
+                    loadAnalyticsCookies();
+                }
+                
+                if (prefs.preferences) {
+                    loadPreferenceCookies();
+                }
+            }
+        }
+        
+        // Load analytics cookies (example function)
+        function loadAnalyticsCookies() {
+            // This is where you would initialize Google Analytics or other analytics tools
+            console.log('Analytics cookies loaded');
+            // Example: Initialize Google Analytics
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('config', 'UA-XXXXX-Y');
+            // }
+        }
+        
+        // Load preference cookies
+        function loadPreferenceCookies() {
+            console.log('Preference cookies loaded');
+            // Load user preferences
+        }
+        
+        // Accept all cookies
+        function acceptAllCookies() {
+            setCookie('cookie_consent', 'all', 365);
+            setCookie('cookie_preferences', JSON.stringify({
+                analytics: true,
+                preferences: true
+            }), 365);
+            
+            cookieConsentBanner.classList.remove('active');
+            cookieModal.classList.remove('active');
+            
+            // Apply all cookies
+            loadAnalyticsCookies();
+            loadPreferenceCookies();
+            
+            // Show confirmation
+            showNotification('Vos préférences de cookies ont été enregistrées.');
+        }
+        
+        // Save custom cookie preferences
+        function saveCookiePreferences() {
+            const analytics = analyticsCookiesCheckbox.checked;
+            const preferences = preferenceCookiesCheckbox.checked;
+            
+            setCookie('cookie_consent', 'custom', 365);
+            setCookie('cookie_preferences', JSON.stringify({
+                analytics: analytics,
+                preferences: preferences
+            }), 365);
+            
+            cookieConsentBanner.classList.remove('active');
+            cookieModal.classList.remove('active');
+            
+            // Apply selected cookies
+            if (analytics) {
+                loadAnalyticsCookies();
+            }
+            
+            if (preferences) {
+                loadPreferenceCookies();
+            }
+            
+            // Show confirmation
+            showNotification('Vos préférences de cookies ont été enregistrées.');
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--accent-teal);
+                color: white;
+                padding: 15px 20px;
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow-medium);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+                max-width: 300px;
+            `;
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // Add CSS for notification animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Event Listeners for cookie system
+        acceptAllCookiesBtn.addEventListener('click', acceptAllCookies);
+        acceptAllInModalBtn.addEventListener('click', acceptAllCookies);
+        
+        cookieSettingsBtn.addEventListener('click', () => {
+            cookieModal.classList.add('active');
+            cookieConsentBanner.classList.remove('active');
+        });
+        
+        closeCookieModalBtn.addEventListener('click', () => {
+            cookieModal.classList.remove('active');
+            
+            // If no consent yet, show banner again
+            if (!getCookie('cookie_consent')) {
+                setTimeout(() => {
+                    cookieConsentBanner.classList.add('active');
+                }, 500);
+            }
+        });
+        
+        saveCookiePreferencesBtn.addEventListener('click', saveCookiePreferences);
+        
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
+        const cookieConsentBanner = document.getElementById('cookieConsent');
         
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -2725,7 +3662,7 @@
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Merci pour votre message! Notre équipe vous contactera dans les plus brefs délais.');
+            showNotification('Merci pour votre message! Notre équipe vous contactera dans les plus brefs délais.');
             this.reset();
         });
         
@@ -2733,7 +3670,7 @@
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = this.querySelector('input[type="email"]').value;
-            alert(`Merci pour votre inscription à notre newsletter! Un email de confirmation a été envoyé à ${email}.`);
+            showNotification(`Merci pour votre inscription à notre newsletter! Un email de confirmation a été envoyé à ${email}.`);
             this.reset();
         });
         
@@ -2832,6 +3769,7 @@
                 document.getElementById('eventsPage').classList.remove('active');
                 document.getElementById('eventDetailPage').classList.remove('active');
                 document.getElementById('registrationPage').classList.remove('active');
+                hideAllLegalPages();
                 
                 // Update event detail page
                 document.getElementById('eventDetailTitle').textContent = event.title;
@@ -2893,6 +3831,7 @@
                 document.getElementById('eventsPage').classList.remove('active');
                 document.getElementById('eventDetailPage').classList.remove('active');
                 document.getElementById('registrationPage').classList.remove('active');
+                hideAllLegalPages();
                 
                 // Update registration page
                 document.getElementById('registrationTitle').textContent = `Inscription : ${event.title}`;
@@ -2973,6 +3912,7 @@
                     eventsPage.classList.add('active');
                     eventDetailPage.classList.remove('active');
                     registrationPage.classList.remove('active');
+                    hideAllLegalPages();
                     
                     // Hide page transition
                     document.getElementById('pageTransition').classList.add('hidden');
@@ -2995,6 +3935,7 @@
                     eventsPage.classList.remove('active');
                     eventDetailPage.classList.remove('active');
                     registrationPage.classList.remove('active');
+                    hideAllLegalPages();
                     mainPage.style.display = 'block';
                     
                     // Hide page transition
@@ -3017,6 +3958,7 @@
                     // Hide current page, show events page
                     eventDetailPage.classList.remove('active');
                     registrationPage.classList.remove('active');
+                    hideAllLegalPages();
                     eventsPage.classList.add('active');
                     
                     // Hide page transition
@@ -3075,7 +4017,7 @@
             const event = events[eventId];
             
             // Show success message
-            alert(`Merci pour votre inscription à "${event.title}"! Vous recevrez une confirmation par email dans les 24 heures. Cet événement est co-organisé gratuitement par Datasecur Consulting et ses partenaires institutionnels.`);
+            showNotification(`Merci pour votre inscription à "${event.title}"! Vous recevrez une confirmation par email dans les 24 heures. Cet événement est co-organisé gratuitement par Datasecur Consulting et ses partenaires institutionnels.`);
             
             // Reset form and go back to events page
             this.reset();
@@ -3104,6 +4046,98 @@
             if (btn.textContent === 'S\'inscrire gratuitement') {
                 btn.textContent = 'S\'inscrire';
             }
+        });
+        
+        // Legal Pages Navigation
+        const showMentionsLegalesBtn = document.getElementById('showMentionsLegales');
+        const showPrivacyPolicyBtn = document.getElementById('showPrivacyPolicy');
+        const showCookiePolicyBtn = document.getElementById('showCookiePolicy');
+        const showCookiePolicyFooterBtn = document.getElementById('showCookiePolicyFooter');
+        const showCreditsBtn = document.getElementById('showCredits');
+        const openCookieSettingsFromPageBtn = document.getElementById('openCookieSettingsFromPage');
+        const backToLegalHomeBtns = document.querySelectorAll('.back-to-legal-home');
+        
+        // Hide all legal pages
+        function hideAllLegalPages() {
+            document.querySelectorAll('.legal-page').forEach(page => {
+                page.classList.remove('active');
+            });
+        }
+        
+        // Show legal page function
+        function showLegalPage(pageId) {
+            // Show page transition
+            document.getElementById('pageTransition').classList.remove('hidden');
+            
+            setTimeout(() => {
+                // Hide all pages
+                document.getElementById('mainPage').style.display = 'none';
+                document.getElementById('eventsPage').classList.remove('active');
+                document.getElementById('eventDetailPage').classList.remove('active');
+                document.getElementById('registrationPage').classList.remove('active');
+                hideAllLegalPages();
+                
+                // Show requested legal page
+                document.getElementById(pageId).classList.add('active');
+                
+                // Hide page transition
+                document.getElementById('pageTransition').classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }, 500);
+        }
+        
+        // Event listeners for legal pages
+        showMentionsLegalesBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLegalPage('mentionsLegalesPage');
+        });
+        
+        showPrivacyPolicyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLegalPage('privacyPolicyPage');
+        });
+        
+        showCookiePolicyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLegalPage('cookiePolicyPage');
+        });
+        
+        showCookiePolicyFooterBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLegalPage('cookiePolicyPage');
+        });
+        
+        showCreditsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLegalPage('creditsPage');
+        });
+        
+        openCookieSettingsFromPageBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            cookieModal.classList.add('active');
+        });
+        
+        backToLegalHomeBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Show page transition
+                document.getElementById('pageTransition').classList.remove('hidden');
+                
+                setTimeout(() => {
+                    // Hide all pages, show main page
+                    hideAllLegalPages();
+                    mainPage.style.display = 'block';
+                    
+                    // Hide page transition
+                    document.getElementById('pageTransition').classList.add('hidden');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                }, 500);
+            });
         });
         
         // Initialize animations on load
