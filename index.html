@@ -216,6 +216,7 @@
             display: flex;
             flex-direction: column;
             max-width: 70%;
+              
         }
 
         .logo h1 {
@@ -290,7 +291,7 @@
             padding: 5px;
         }
 
-        /* Hero Section */
+        /* Hero Section - MODIFICATIONS */
         .hero {
             padding-top: 140px;
             padding-bottom: 80px;
@@ -299,6 +300,9 @@
             position: relative;
             overflow: hidden;
             width: 100%;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
         }
 
         .hero::before {
@@ -319,6 +323,21 @@
             text-align: center;
             margin: 0 auto;
             padding: 0 15px;
+            width: 100%;
+        }
+
+        /* Logo dans hero */
+        .hero-logo {
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-logo img {
+            max-width: 250px;
+            height: auto;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+             border-radius: 10px;
+              overflow: hidden;
         }
 
         .hero h1 {
@@ -326,7 +345,7 @@
             margin-bottom: 20px;
             color: white;
             line-height: 1.2;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 1s ease-out 0.2s both;
             padding: 0 10px;
         }
 
@@ -334,7 +353,7 @@
             font-size: 1.1rem;
             margin-bottom: 30px;
             opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.2s both;
+            animation: fadeInUp 1s ease-out 0.4s both;
             max-width: 100%;
             padding: 0 10px;
         }
@@ -344,20 +363,13 @@
             flex-wrap: wrap;
             gap: 15px;
             justify-content: center;
-            animation: fadeInUp 1s ease-out 0.4s both;
-            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            margin-bottom: 40px;
             padding: 0 10px;
         }
 
         .hero-stats {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            animation: fadeInUp 1s ease-out 0.6s both;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0 10px;
+            display: none; /* Masqué initialement */
         }
 
         .stat-item {
@@ -387,6 +399,22 @@
 
         .hero-image {
             display: none;
+        }
+
+        /* Section pour les stats (après défilement) */
+        .stats-section {
+            background: white;
+            padding: 60px 0;
+            width: 100%;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 100%;
+            margin: 0 auto;
         }
 
         /* About Section */
@@ -561,13 +589,13 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             width: 100%;
-            justify-items: center; /* Centre les éléments dans leur cellule */
+            justify-items: center;
         }
 
         @media (min-width: 992px) {
             .team-grid {
-                grid-template-columns: repeat(3, minmax(280px, 320px)); /* 3 colonnes fixes sur PC */
-                justify-content: center; /* Centre la grille entière */
+                grid-template-columns: repeat(3, minmax(280px, 320px));
+                justify-content: center;
                 gap: 40px;
             }
         }
@@ -580,7 +608,7 @@
             transition: var(--transition);
             text-align: center;
             width: 100%;
-            max-width: 320px; /* Limite la largeur max pour éviter l'étirement */
+            max-width: 320px;
         }
 
         .team-member:hover {
@@ -1707,6 +1735,15 @@
         }
 
         /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1842,6 +1879,7 @@
             .hero {
                 padding-top: 150px;
                 padding-bottom: 90px;
+                min-height: 100vh;
             }
             
             .hero h1 {
@@ -1896,6 +1934,16 @@
             .footer-content {
                 grid-template-columns: 2fr 1fr 1fr 1.5fr;
             }
+            
+            /* Stats section en desktop */
+            .stats-section {
+                padding: 80px 0;
+            }
+            
+            .stats-grid {
+                flex-wrap: nowrap;
+                gap: 60px;
+            }
         }
 
         @media (min-width: 992px) {
@@ -1944,8 +1992,8 @@
                 font-size: 2rem;
             }
             
-            .hero-stats {
-                gap: 60px;
+            .stats-grid {
+                gap: 100px;
             }
             
             .stat-number {
@@ -2081,6 +2129,10 @@
             
             .hero p {
                 font-size: 1rem;
+            }
+            
+            .hero-logo img {
+                max-width: 200px;
             }
             
             .section-header h2 {
@@ -2256,30 +2308,39 @@
             </div>
         </header>
 
-        <!-- Hero Section -->
+        <!-- Hero Section - MODIFIÉ AVEC LOGO -->
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero-content">
+                    <div class="hero-logo">
+                        <!-- Remplacez "logo.png" par le chemin de votre logo -->
+                        <img src="logo.jpg" alt="Datasecur Consulting Logo">
+                    </div>
                     <h1>Conformité RGPD & Sécurité Numérique au Togo</h1>
                     <p>Datasecur Consulting accompagne les entreprises et institutions togolaises dans la mise en conformité et la sécurisation durable de leurs activités numériques, en partenariat avec l'IPDCP-Togo et le FIPDCP-TOGO.</p>
                     <div class="hero-btns">
                         <a href="#services" class="btn btn-primary">Découvrir nos services</a>
                         <a href="#contact" class="btn btn-white">Demander un audit</a>
                     </div>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-text">Clients accompagnés avec succès</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-text">Conformité RGPD garantie</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-text">Support technique disponible</div>
-                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section (après défilement) -->
+        <section class="stats-section" id="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-text">Clients accompagnés avec succès</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-text">Conformité RGPD garantie</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-text">Support technique disponible</div>
                     </div>
                 </div>
             </div>
