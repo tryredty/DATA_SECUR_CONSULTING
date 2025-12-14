@@ -1345,6 +1345,29 @@
             font-size: 0.8rem;
         }
 
+        .footer-info p a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .footer-info p a:hover {
+            color: var(--accent-teal);
+            transform: translateX(5px);
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+        }
+
+        .footer-info p a i {
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+
         .footer-contact p {
             margin-bottom: 15px;
             display: flex;
@@ -2779,12 +2802,10 @@
                     
                     <div class="footer-info">
                         <h4>Informations légales</h4>
-                        <ul>
-                            <li><a href="#" id="showMentionsLegales"><i class="fas fa-gavel"></i> Mentions légales</a></li>
-                            <li><a href="#" id="showPrivacyPolicy"><i class="fas fa-user-shield"></i> Politique de confidentialité</a></li>
-                            <li><a href="#" id="showCookiePolicyFooter"><i class="fas fa-cookie-bite"></i> Gestion des cookies</a></li>
-                            <li><a href="#" id="showCredits"><i class="fas fa-code"></i> Crédits</a></li>
-                        </ul>
+                            <p><a href="#" id="showMentionsLegales"><i class="fas fa-gavel"></i> Mentions légales</a></p>
+                            <p><a href="#" id="showPrivacyPolicy"><i class="fas fa-user-shield"></i> Politique de confidentialité</a></p>
+                            <p><a href="#" id="showCookiePolicyFooter"><i class="fas fa-cookie-bite"></i> Gestion des cookies</a></p>
+                            <p><a href="#" id="showCredits"><i class="fas fa-code"></i> Crédits</a></p>
                     </div>
                     
                     <div class="footer-newsletter">
