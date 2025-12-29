@@ -1110,12 +1110,6 @@
             width: 100%;
         }
 
-        .registration-summary h3 {
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
         .registration-summary-item {
             display: flex;
             justify-content: space-between;
@@ -1450,7 +1444,7 @@
             padding: 0 15px;
         }
 
-        /* Cookie Consent Banner */
+        /* Cookie Consent Banner - NOUVELLE VERSION */
         .cookie-consent {
             position: fixed;
             bottom: 0;
@@ -1514,14 +1508,24 @@
             color: white;
         }
 
+        .cookie-btn-refuse {
+            background-color: white;
+            color: var(--primary-dark);
+            border: 2px solid white;
+        }
+
         .cookie-btn-settings {
             background-color: transparent;
             color: white;
-            border: 2px solid white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .cookie-btn-accept:hover {
             background-color: var(--accent-green);
+        }
+
+        .cookie-btn-refuse:hover {
+            background-color: #f0f0f0;
         }
 
         .cookie-btn-settings:hover {
@@ -2225,15 +2229,17 @@
         <div class="loader-motto">Votre conformité, notre engagement</div>
     </div>
 
-    <!-- Cookie Consent Banner -->
+    <!-- Cookie Consent Banner - VERSION AMELIOREE -->
     <div class="cookie-consent" id="cookieConsent">
         <div class="cookie-content">
             <div class="cookie-text">
-                <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. Certains cookies sont nécessaires au fonctionnement du site, tandis que d'autres nous aident à analyser l'utilisation du site. En continuant à naviguer, vous acceptez notre <a href="#" id="showCookiePolicy">Politique de cookies</a>.</p>
+                <p>Nous utilisons des cookies pour le fonctionnement du site et, avec votre accord, pour analyser son utilisation. Vous pouvez tout accepter, refuser, ou gérer vos préférences.</p>
+                <a href="#" id="showCookiePolicy">En savoir plus</a>
             </div>
             <div class="cookie-buttons">
-                <button class="cookie-btn cookie-btn-settings" id="cookieSettings">Gérer les cookies</button>
+                <button class="cookie-btn cookie-btn-refuse" id="refuseNonEssential">Refuser</button>
                 <button class="cookie-btn cookie-btn-accept" id="acceptAllCookies">Tout accepter</button>
+                <button class="cookie-btn cookie-btn-settings" id="cookieSettings">Personnaliser</button>
             </div>
         </div>
     </div>
@@ -2246,7 +2252,7 @@
                 <button class="modal-close" id="closeCookieModal">&times;</button>
             </div>
             <div class="modal-body">
-                <p>En tant que cabinet spécialisé en conformité RGPD, nous nous engageons à respecter votre vie privée. Vous pouvez configurer vos préférences de cookies ci-dessous.</p>
+                <p>En tant que cabinet spécialisé en protection des données, nous nous engageons à respecter votre vie privée. Vous pouvez configurer vos préférences de cookies ci-dessous.</p>
                 
                 <div class="cookie-category">
                     <div class="category-header">
@@ -2331,7 +2337,7 @@
             </div>
         </header>
 
-        <!-- Hero Section - MODIFIÉ AVEC LOGO -->
+        <!-- Hero Section - MODIFIÉ AVEC LOGO ET TERMES SIMPLIFIÉS -->
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero-content">
@@ -2339,7 +2345,7 @@
                         <!-- Remplacez "logo.png" par le chemin de votre logo -->
                         <img src="logo.jpg" alt="Datasecur Consulting Logo">
                     </div>
-                    <h1>Conformité RGPD & Sécurité Numérique au Togo</h1>
+                    <h1>Protection des Données & Sécurité Numérique au Togo</h1>
                     <p>Datasecur Consulting accompagne les entreprises et institutions togolaises dans la mise en conformité et la sécurisation durable de leurs activités numériques, en partenariat avec l'IPDCP-Togo et le FIPDCP-TOGO.</p>
                     <div class="hero-btns">
                         <a href="#services" class="btn btn-primary">Découvrir nos services</a>
@@ -2359,7 +2365,7 @@
                     </div>
                     <div class="stat-item animate-on-scroll">
                         <div class="stat-number">100%</div>
-                        <div class="stat-text">Conformité RGPD garantie</div>
+                        <div class="stat-text">Conformité protection des données garantie</div>
                     </div>
                     <div class="stat-item animate-on-scroll">
                         <div class="stat-number">24/7</div>
@@ -2374,7 +2380,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>À Propos de <span>Datasecur Consulting</span></h2>
-                    <p class="section-subtitle">Expert en mise en conformité RGPD et sécurisation des systèmes d'information au Togo et en Afrique de l'Ouest.</p>
+                    <p class="section-subtitle">Expert en mise en conformité et protection des données personnelles au Togo et en Afrique de l'Ouest.</p>
                 </div>
                 
                 <div class="about-content">
@@ -2384,7 +2390,7 @@
                     
                     <div class="about-text animate-on-scroll">
                         <h2>Notre Mission : Votre Conformité</h2>
-                        <p>Fondé à Lomé, Datasecur Consulting est un cabinet spécialisé dans l'accompagnement des entreprises vers la conformité RGPD et la sécurisation de leurs systèmes d'information. Notre équipe d'experts certifiés vous guide à chaque étape.</p>
+                        <p>Fondé à Lomé, Datasecur Consulting est un cabinet spécialisé dans l'accompagnement des entreprises vers la conformité et la protection des données personnelles et la sécurisation de leurs systèmes d'information. Notre équipe d'experts certifiés vous guide à chaque étape.</p>
                         <p>Notre devise, <strong>"Votre conformité, notre engagement"</strong>, traduit notre philosophie : nous nous engageons pleinement pour accompagner nos clients vers une conformité durable et une sécurité renforcée de leurs données sensibles.</p>
                         
                         <div class="about-features">
@@ -2419,7 +2425,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Nos <span>Services Experts</span></h2>
-                    <p class="section-subtitle">Une gamme complète de services pour garantir votre conformité RGPD et la sécurité de vos systèmes d'information.</p>
+                    <p class="section-subtitle">Une gamme complète de services pour garantir votre conformité et la protection de vos données personnelles.</p>
                 </div>
                 
                 <div class="services-grid">
@@ -2427,8 +2433,8 @@
                         <div class="service-icon">
                             <i class="fas fa-file-contract"></i>
                         </div>
-                        <h3>Audit de Conformité RGPD</h3>
-                        <p>Évaluation complète de votre niveau de conformité au RGPD et aux réglementations locales sur la protection des données.</p>
+                        <h3>Audit de Conformité</h3>
+                        <p>Évaluation complète de votre niveau de conformité aux réglementations sur la protection des données personnelles.</p>
                         <a href="#contact" class="service-link">Demander un audit <i class="fas fa-arrow-right"></i></a>
                     </div> 
                     
@@ -2491,11 +2497,11 @@
                 <div class="team-grid">
                     <div class="team-member animate-on-scroll">
                         <div class="member-image">
-                            <img src="photo5.jpg" alt="Kodjo Mensah - CEO & Expert RGPD">
+                            <img src="photo5.jpg" alt="Kodjo Mensah - CEO & Expert Protection des Données">
                         </div>
                         <div class="member-info">
                             <h3>Kodjo Mensah</h3>
-                            <div class="member-position">CEO & Expert RGPD</div>
+                            <div class="member-position">CEO & Expert Protection des Données</div>
                             <p class="member-desc">15 ans d'expérience en conformité numérique. Certifié CIPM, CIPP/E. Ancien consultant pour la Commission de l'UEMOA.</p>
                             <div class="member-social">
                                 <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -2567,7 +2573,7 @@
                             <ul style="list-style-type: none; margin-top: 15px;">
                                 <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Formation et sensibilisation des entreprises togolaises</li>
                                 <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Accompagnement à la mise en conformité</li>
-                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Organisation d'événements de promotion de la culture RGPD</li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Organisation d'événements de promotion de la culture de protection des données</li>
                                 <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><i class="fas fa-check" style="color: var(--accent-teal); position: absolute; left: 0;"></i> Veille réglementaire et adaptation des pratiques</li>
                             </ul>
                         </div>
@@ -2615,12 +2621,12 @@
                             <div class="event-month">JUIN 2023</div>
                         </div>
                         <div class="event-content">
-                            <h3>Webinaire : RGPD pour les PME togolaises</h3>
+                            <h3>Webinaire : Protection des données pour les PME togolaises</h3>
                             <div class="event-meta">
                                 <span><i class="fas fa-clock"></i> 14h - 16h</span>
                                 <span><i class="fas fa-video"></i> En ligne</span>
                             </div>
-                            <p>Découvrez comment mettre en place une conformité RGPD efficace dans votre PME avec des outils adaptés au contexte togolais.</p>
+                            <p>Découvrez comment mettre en place une conformité efficace dans votre PME avec des outils adaptés au contexte togolais.</p>
                             <div class="event-actions">
                                 <a href="#" class="btn btn-primary btn-center register-btn" data-event="1">S'inscrire</a>
                                 <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="1">Voir détails</a>
@@ -2742,7 +2748,7 @@
                                 <label for="service">Service intéressé</label>
                                 <select id="service">
                                     <option value="">Sélectionnez un service</option>
-                                    <option value="audit">Audit de conformité RGPD</option>
+                                    <option value="audit">Audit de conformité</option>
                                     <option value="security">Sécurisation des systèmes</option>
                                     <option value="training">Formation & Sensibilisation</option>
                                     <option value="certification">Accompagnement à la certification</option>
@@ -2769,7 +2775,7 @@
                     <div class="footer-logo">
                         <h3>Datasecur<span>Consulting</span></h3>
                         <p>Votre conformité, notre engagement</p>
-                        <p>Expert en mise en conformité RGPD et sécurisation durable des activités numériques au Togo et en Afrique de l'Ouest.</p>
+                        <p>Expert en mise en conformité et protection des données personnelles au Togo et en Afrique de l'Ouest.</p>
                         
                         <div class="social-links">
                             <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -2810,7 +2816,7 @@
                     
                     <div class="footer-newsletter">
                         <h4>Newsletter</h4>
-                        <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités sur la conformité RGPD et la sécurité numérique.</p>
+                        <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités sur la protection des données et la sécurité numérique.</p>
                         <form class="newsletter-form">
                             <input type="email" placeholder="Votre adresse email" required>
                             <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -2830,7 +2836,7 @@
         <div class="events-hero">
             <div class="container">
                 <h1>Événements & Webinaires</h1>
-                <p>Découvrez tous nos événements, ateliers et webinaires sur la conformité RGPD et la sécurité numérique au Togo et en Afrique.</p>
+                <p>Découvrez tous nos événements, ateliers et webinaires sur la protection des données et la sécurité numérique au Togo et en Afrique.</p>
                 <a href="#" class="btn btn-white" id="backToHome">Retour à l'accueil</a>
             </div>
         </div>
@@ -2852,13 +2858,13 @@
                         <div class="event-month">JUIN 2023</div>
                     </div>
                     <div class="event-content">
-                        <h3>RGPD pour les PME togolaises : Par où commencer ?</h3>
+                        <h3>Protection des données pour les PME togolaises : Par où commencer ?</h3>
                         <div class="event-meta">
                             <span><i class="fas fa-clock"></i> 14h - 16h</span>
                             <span><i class="fas fa-video"></i> En ligne</span>
                             <span><i class="fas fa-user"></i> Kodjo Mensah</span>
                         </div>
-                        <p>Webinaire gratuit pour les PME togolaises souhaitant comprendre les bases du RGPD et les premières étapes vers la conformité.</p>
+                        <p>Webinaire gratuit pour les PME togolaises souhaitant comprendre les bases de la protection des données et les premières étapes vers la conformité.</p>
                         <div class="event-actions">
                             <a href="#" class="btn btn-primary btn-center register-btn" data-event="1">S'inscrire gratuitement</a>
                             <a href="#" class="btn btn-secondary btn-center view-event-detail" data-event="1">Voir détails</a>
@@ -2951,13 +2957,13 @@
                         <div class="event-month">AVR 2023</div>
                     </div>
                     <div class="event-content">
-                        <h3>Atelier : Mise en conformité RGPD étape par étape</h3>
+                        <h3>Atelier : Mise en conformité étape par étape</h3>
                         <div class="event-meta">
                             <span><i class="fas fa-clock"></i> 9h - 16h</span>
                             <span><i class="fas fa-map-marker-alt"></i> Lomé, Immeuble Datasecur</span>
                             <span><i class="fas fa-user"></i> Kodjo Mensah</span>
                         </div>
-                        <p>Atelier pratique pour mettre en œuvre une conformité RGPD complète dans votre organisation. Méthodologie et outils fournis.</p>
+                        <p>Atelier pratique pour mettre en œuvre une conformité complète dans votre organisation. Méthodologie et outils fournis.</p>
                         <div class="event-actions">
                             <a href="#" class="btn btn-primary btn-center view-event-detail" data-event="6">Voir compte-rendu</a>
                         </div>
@@ -2975,7 +2981,7 @@
     <div class="event-detail-page" id="eventDetailPage">
         <div class="event-detail-hero">
             <div class="container">
-                <h1 id="eventDetailTitle">RGPD pour les PME togolaises : Par où commencer ?</h1>
+                <h1 id="eventDetailTitle">Protection des données pour les PME togolaises : Par où commencer ?</h1>
                 <div class="event-detail-meta">
                     <div class="event-detail-meta-item">
                         <i class="fas fa-calendar"></i>
@@ -3001,13 +3007,13 @@
             <div class="event-detail-content">
                 <div class="event-detail-main">
                     <h2>À propos de cet événement</h2>
-                    <p id="eventDetailDescription">Ce webinaire gratuit est spécialement conçu pour les PME togolaises qui souhaitent comprendre les bases du RGPD et identifier les premières étapes concrètes vers la conformité. Nous aborderons les principes fondamentaux de la protection des données et les obligations spécifiques pour les entreprises au Togo.</p>
+                    <p id="eventDetailDescription">Ce webinaire gratuit est spécialement conçu pour les PME togolaises qui souhaitent comprendre les bases de la protection des données et identifier les premières étapes concrètes vers la conformité. Nous aborderons les principes fondamentaux de la protection des données et les obligations spécifiques pour les entreprises au Togo.</p>
                     
                     <h2>Contenu détaillé</h2>
                     <div id="eventDetailContent">
-                        <p><strong>1. Introduction au RGPD et son application au Togo</strong><br>
+                        <p><strong>1. Introduction à la protection des données et son application au Togo</strong><br>
                         - Principes fondamentaux de la protection des données<br>
-                        - Cadre juridique togolais et implications du RGPD<br>
+                        - Cadre juridique togolais et implications<br>
                         - Les autorités de contrôle (IPDCP-Togo, etc.)</p>
                         
                         <p><strong>2. Les obligations des PME</strong><br>
@@ -3027,7 +3033,7 @@
                     
                     <h2>Ce que vous apprendrez</h2>
                     <ul id="eventDetailLearnings">
-                        <li>Comprendre les obligations RGPD pour votre PME</li>
+                        <li>Comprendre les obligations en matière de protection des données pour votre PME</li>
                         <li>Identifier les premières actions prioritaires</li>
                         <li>Utiliser des outils pratiques pour votre conformité</li>
                         <li>Éviter les sanctions et renforcer la confiance de vos clients</li>
@@ -3039,7 +3045,7 @@
                         
                         <h3>Points clés abordés :</h3>
                         <ul>
-                            <li>Présentation des principes fondamentaux du RGPD adaptés au contexte togolais</li>
+                            <li>Présentation des principes fondamentaux de la protection des données adaptés au contexte togolais</li>
                             <li>Échanges fructueux sur les défis spécifiques des PME locales</li>
                             <li>Partage d'outils pratiques pour démarrer la conformité</li>
                         </ul>
@@ -3157,7 +3163,7 @@
                     <h3>Résumé de l'inscription</h3>
                     <div class="registration-summary-item">
                         <span>Événement :</span>
-                        <span id="summaryEvent">RGPD pour les PME togolaises</span>
+                        <span id="summaryEvent">Protection des données pour les PME togolaises</span>
                     </div>
                     <div class="registration-summary-item">
                         <span>Date :</span>
@@ -3201,7 +3207,7 @@
                 <div class="legal-section">
                     <h2>1. Informations générales</h2>
                     <p><strong>Nom de l'entreprise :</strong> Datasecur Consulting</p>
-                    <p><strong>Forme juridique :</strong> Cabinet de conseil en conformité RGPD et sécurité numérique</p>
+                    <p><strong>Forme juridique :</strong> Cabinet de conseil en conformité et protection des données personnelles</p>
                     <p><strong>Siège social :</strong> Rue du Commerce, Immeuble Datasecur, Lomé, Togo</p>
                     <p><strong>Téléphone :</strong> +228 22 21 20 19</p>
                     <p><strong>Email :</strong> contact@datasecur-consulting.tg</p>
@@ -3211,7 +3217,7 @@
                 
                 <div class="legal-section">
                     <h2>2. Objet du site</h2>
-                    <p>Le présent site a pour objet de présenter les activités de Datasecur Consulting, cabinet spécialisé dans l'accompagnement des entreprises vers la conformité RGPD et la sécurisation de leurs systèmes d'information au Togo et en Afrique de l'Ouest.</p>
+                    <p>Le présent site a pour objet de présenter les activités de Datasecur Consulting, cabinet spécialisé dans l'accompagnement des entreprises vers la conformité et la protection des données personnelles et la sécurisation de leurs systèmes d'information au Togo et en Afrique de l'Ouest.</p>
                 </div>
                 
                 <div class="legal-section">
@@ -3255,7 +3261,7 @@
             <div class="legal-content">
                 <div class="legal-section">
                     <h2>1. Introduction</h2>
-                    <p>Datasecur Consulting, en tant que cabinet spécialisé en conformité RGPD, s'engage à protéger la vie privée des utilisateurs de son site web. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données personnelles.</p>
+                    <p>Datasecur Consulting, en tant que cabinet spécialisé en protection des données, s'engage à protéger la vie privée des utilisateurs de son site web. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données personnelles.</p>
                 </div>
                 
                 <div class="legal-section">
@@ -3313,7 +3319,7 @@
                 
                 <div class="legal-section">
                     <h2>7. Vos droits</h2>
-                    <p>Conformément au RGPD et à la loi togolaise n°2019-014, vous disposez des droits suivants :</p>
+                    <p>Conformément à la protection des données et à la loi togolaise n°2019-014, vous disposez des droits suivants :</p>
                     <ul>
                         <li>Droit d'accès à vos données</li>
                         <li>Droit de rectification</li>
@@ -3429,7 +3435,7 @@
             <div class="legal-content">
                 <div class="legal-section">
                     <h2>1. Développement</h2>
-                    <p>Ce site a été conçu et développé par l'équipe technique de Datasecur Consulting avec l'expertise de nos consultants en conformité RGPD.</p>
+                    <p>Ce site a été conçu et développé par l'équipe technique de Datasecur Consulting avec l'expertise de nos consultants en protection des données.</p>
                 </div>
                 
                 <div class="legal-section">
@@ -3455,7 +3461,7 @@
                     <h2>4. Conformité</h2>
                     <p>Ce site a été conçu en respectant :</p>
                     <ul>
-                        <li>Le Règlement Général sur la Protection des Données (RGPD)</li>
+                        <li>Les principes de protection des données personnelles</li>
                         <li>La loi togolaise n°2019-014 relative à la protection des données à caractère personnel</li>
                         <li>Les recommandations de l'IPDCP-TOGO (Instance de Protection des Données à Caractère Personnel - Togo)</li>
                         <li>Les standards d'accessibilité web (WCAG 2.1 niveau AA)</li>
@@ -3499,10 +3505,11 @@
             }, 1000);
         });
 
-        // Cookie Management System
-        const cookieConsent = document.getElementById('cookieConsent');
+        // Cookie Management System - VERSION AMELIOREE
+        const cookieConsentBanner = document.getElementById('cookieConsent');
         const cookieModal = document.getElementById('cookieModal');
         const acceptAllCookiesBtn = document.getElementById('acceptAllCookies');
+        const refuseNonEssentialBtn = document.getElementById('refuseNonEssential');
         const cookieSettingsBtn = document.getElementById('cookieSettings');
         const closeCookieModalBtn = document.getElementById('closeCookieModal');
         const saveCookiePreferencesBtn = document.getElementById('saveCookiePreferences');
@@ -3557,6 +3564,9 @@
                 // All cookies accepted
                 loadAnalyticsCookies();
                 loadPreferenceCookies();
+            } else if (cookieConsent === 'essential') {
+                // Only essential cookies
+                // Do not load analytics or preference cookies
             } else if (cookieConsent === 'custom' && cookiePreferences) {
                 // Custom preferences
                 const prefs = JSON.parse(cookiePreferences);
@@ -3603,7 +3613,25 @@
             loadPreferenceCookies();
             
             // Show confirmation
-            showNotification('Vos préférences de cookies ont été enregistrées.');
+            showNotification('Vos préférences de cookies ont été enregistrées. Tous les cookies sont acceptés.');
+        }
+        
+        // Refuse non-essential cookies (accept only essential)
+        function refuseNonEssentialCookies() {
+            setCookie('cookie_consent', 'essential', 365);
+            setCookie('cookie_preferences', JSON.stringify({
+                analytics: false,
+                preferences: false
+            }), 365);
+            
+            cookieConsentBanner.classList.remove('active');
+            cookieModal.classList.remove('active');
+            
+            // Apply preferences: DO NOT load analytics or preference scripts
+            // Essential cookies are already loaded by default
+            
+            // Show confirmation
+            showNotification('Seuls les cookies essentiels au fonctionnement du site sont activés.');
         }
         
         // Save custom cookie preferences
@@ -3679,11 +3707,24 @@
         
         // Event Listeners for cookie system
         acceptAllCookiesBtn.addEventListener('click', acceptAllCookies);
+        refuseNonEssentialBtn.addEventListener('click', refuseNonEssentialCookies);
         acceptAllInModalBtn.addEventListener('click', acceptAllCookies);
         
         cookieSettingsBtn.addEventListener('click', () => {
             cookieModal.classList.add('active');
             cookieConsentBanner.classList.remove('active');
+            
+            // Set checkboxes based on current preferences
+            const cookiePreferences = getCookie('cookie_preferences');
+            if (cookiePreferences) {
+                const prefs = JSON.parse(cookiePreferences);
+                analyticsCookiesCheckbox.checked = prefs.analytics || false;
+                preferenceCookiesCheckbox.checked = prefs.preferences || false;
+            } else {
+                // Default: unchecked
+                analyticsCookiesCheckbox.checked = false;
+                preferenceCookiesCheckbox.checked = false;
+            }
         });
         
         closeCookieModalBtn.addEventListener('click', () => {
@@ -3702,7 +3743,6 @@
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
-        const cookieConsentBanner = document.getElementById('cookieConsent');
         
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -3759,12 +3799,12 @@
         // Event data - TOUS LES ÉVÉNEMENTS SONT GRATUITS MAINTENANT
         const events = {
             1: {
-                title: "RGPD pour les PME togolaises : Par où commencer ?",
+                title: "Protection des données pour les PME togolaises : Par où commencer ?",
                 date: "15 Juin 2023, 14h - 16h",
                 location: "En ligne (Webinaire)",
                 speaker: "Kodjo Mensah",
                 price: "Gratuit",
-                description: "Webinaire gratuit pour les PME togolaises souhaitant comprendre les bases du RGPD et les premières étapes vers la conformité.",
+                description: "Webinaire gratuit pour les PME togolaises souhaitant comprendre les bases de la protection des données et les premières étapes vers la conformité.",
                 category: "webinaire",
                 past: false
             },
@@ -3809,12 +3849,12 @@
                 past: true
             },
             6: {
-                title: "Atelier : Mise en conformité RGPD étape par étape",
+                title: "Atelier : Mise en conformité étape par étape",
                 date: "05 Avril 2023, 9h - 16h",
                 location: "Lomé, Immeuble Datasecur",
                 speaker: "Kodjo Mensah",
                 price: "Gratuit",
-                description: "Atelier pratique pour mettre en œuvre une conformité RGPD complète dans votre organisation. Méthodologie et outils fournis.",
+                description: "Atelier pratique pour mettre en œuvre une conformité complète dans votre organisation. Méthodologie et outils fournis.",
                 category: "atelier passe",
                 past: true
             }
