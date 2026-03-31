@@ -199,11 +199,36 @@ document.querySelectorAll('#navMenu a').forEach(link => {
 // Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
+    const backToTop = document.getElementById('backToTop');
+    const progressBar = document.getElementById('progressBar');
+    
+    // Header shadow
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
+    
+    // Back to top visibility
+    if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+    } else {
+        backToTop.classList.remove('show');
+    }
+    
+    // Scroll progress calculation
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + "%";
+});
+
+// Back to top click
+document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 // Form submission
@@ -247,6 +272,23 @@ document.querySelectorAll('#mainPage a[href^="#"]').forEach(anchor => {
                 top: targetElement.offsetTop - 100,
                 behavior: 'smooth'
             });
+        }
+    });
+});
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+            otherItem.classList.remove('active');
+        });
+        
+        if (!isActive) {
+            item.classList.add('active');
         }
     });
 });
