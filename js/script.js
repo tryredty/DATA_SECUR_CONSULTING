@@ -1,5 +1,3 @@
-
-// Page Loader
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.getElementById('pageTransition').classList.add('hidden');
