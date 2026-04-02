@@ -301,16 +301,11 @@ header.scrolled {
     max-width: 70%;
 }
 
-.logo h1 {
-    font-size: 1.5rem;
-    color: white;
-    margin-bottom: 0;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-}
-
-.logo span {
-    color: var(--accent-purple);
+.header-logo-img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 2px;
 }
 
 .logo .motto {
@@ -928,14 +923,15 @@ footer {
     padding: 0 15px;
 }
 
-.footer-logo h3 {
-    font-size: 1.8rem;
-    color: white;
-    margin-bottom: 10px;
+.footer-logo {
+    margin-bottom: 20px;
 }
 
-.footer-logo h3 span {
-    color: var(--accent-purple);
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
 }
 
 .footer-logo p {
