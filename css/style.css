@@ -275,15 +275,16 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 15px 0;
     transition: var(--transition);
     background-color: rgba(44, 26, 77, 0.98); /* Violet foncé avec transparence */
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 header.scrolled {
-    padding: 15px 0;
+    padding: 10px 0;
     box-shadow: var(--shadow-dark);
 }
 
@@ -292,28 +293,29 @@ header.scrolled {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
     max-width: 70%;
+    z-index: 1002;
 }
 
 .header-logo-img {
-    height: 65px;
+    height: 55px;
     width: auto;
     object-fit: contain;
-    margin-bottom: 2px;
 }
 
 .logo .motto {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     margin-top: 2px;
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
 
 nav ul {
@@ -323,18 +325,18 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
     position: relative;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 0.9rem;
     transition: var(--transition);
     position: relative;
-    padding: 8px 0;
+    padding: 5px 0;
 }
 
 nav ul li a:hover {
@@ -344,13 +346,13 @@ nav ul li a:hover {
 nav ul li a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 0;
-    height: 3px;
+    height: 2px;
     background: var(--accent-purple);
     transition: var(--transition);
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 nav ul li a:hover::after {
@@ -359,13 +361,15 @@ nav ul li a:hover::after {
 
 .mobile-menu-btn {
     display: none;
-    background: none;
+    background: rgba(255, 255, 255, 0.1);
     border: none;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     cursor: pointer;
     z-index: 1001;
-    padding: 5px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: var(--transition);
 }
 
 /* Hero Section */
@@ -911,34 +915,45 @@ body.dark-theme .contact-form {
 footer {
     background-color: var(--primary-dark);
     color: white;
-    padding: 50px 0 30px;
+    padding: 70px 0 30px;
     width: 100%;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-accent);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
-    margin-bottom: 40px;
-    padding: 0 15px;
+    margin-bottom: 50px;
 }
 
 .footer-logo {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-logo-img {
-    height: 50px;
+    height: 60px;
     width: auto;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .footer-logo p {
-    opacity: 0.8;
-    font-style: italic;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .footer-links h4,
@@ -946,10 +961,10 @@ footer {
 .footer-newsletter h4,
 .footer-info h4 {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: white;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .footer-links h4::after,
@@ -1644,6 +1659,7 @@ input:checked + .toggle-slider:before {
 }
 
 @media (max-width: 767px) {
+    nav { display: contents; }
     nav ul {
         position: fixed;
         top: 0;
